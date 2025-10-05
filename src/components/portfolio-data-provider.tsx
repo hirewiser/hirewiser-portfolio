@@ -112,6 +112,7 @@ export interface UserProfile {
 // ============ 🔹 Transformed Portfolio Data 🔹 ============
 
 export interface PortfolioData {
+  username: string;
   name: string;
   initials: string;
   url: string;

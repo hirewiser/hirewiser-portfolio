@@ -1,3 +1,5 @@
+"use client"
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -10,10 +12,23 @@ import { getLinkIcon } from "@/components/portfolio-icons";
 import ResponsiveNavbar from "@/components/responsive-navbar";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import posthog from "posthog-js";
+import { useEffect } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
+const capturePostHogEvent = (username: string) => {
+  posthog.capture('portfolio_opened', {
+    user: username,
+  })
+}
+
 export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioData }) {
+
+  useEffect(() => {
+    capturePostHogEvent(portfolioData.username);
+  },[]);
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-6 md:space-y-8 px-4  md:pt-8 pb-20 md:pb-10">
       <ResponsiveNavbar portfolioData={portfolioData} />

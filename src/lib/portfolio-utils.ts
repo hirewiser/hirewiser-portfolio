@@ -75,6 +75,7 @@ export const fetchPortfolio = async (username: string) => {
 
 export const transformUserData = (userData: UserProfile) => {
   try {
+    const username = userData.userName;
     const name = `${userData.firstName || ''} ${userData.lastName || ''}`.trim();
     const initials = `${userData.firstName?.[0] || ''}${userData.lastName?.[0] || ''}`.toUpperCase();
     const avatarUrl = userData.profileImage || '';
@@ -165,6 +166,7 @@ export const transformUserData = (userData: UserProfile) => {
     });
 
     const transformedData = {
+      username,
       name,
       initials,
       url: '',

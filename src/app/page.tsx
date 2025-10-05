@@ -1,4 +1,4 @@
-import { LoadingPortfolio, ErrorPortfolio, NoSubdomainPortfolio } from "@/components/portfolio-components";
+import { ErrorPortfolio, NoSubdomainPortfolio } from "@/components/portfolio-components";
 import { fetchPortfolio, transformUserData, extractUsername } from "@/lib/portfolio-utils";
 import { headers } from "next/headers";
 import PortfolioContentWrapper from "@/components/portfolio-content-wrapper";
