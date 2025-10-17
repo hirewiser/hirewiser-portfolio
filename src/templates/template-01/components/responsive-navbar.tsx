@@ -8,7 +8,6 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { 
@@ -34,7 +33,7 @@ interface NavbarProps {
   portfolioData?: any;
 }
 
-export default function ResponsiveNavbar({ portfolioData = DATA }: NavbarProps) {
+export default function ResponsiveNavbar({ portfolioData }: NavbarProps) {
   const socialLinks = Object.entries(portfolioData.contact.social || {})
     .filter(([_, social]: [string, any]) => social?.navbar && social?.url);
 

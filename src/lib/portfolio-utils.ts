@@ -182,6 +182,7 @@ export const transformUserData = (userData: UserProfile) => {
       projects,
       hackathons,
       contact,
+      templateId: userData.templateId || 'template-01', // Use provided template or default
     };
 
     return transformedData;

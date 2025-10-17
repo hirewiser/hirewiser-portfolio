@@ -1,7 +1,9 @@
 import { ErrorPortfolio, NoSubdomainPortfolio } from "@/components/portfolio-components";
 import { fetchPortfolio, transformUserData, extractUsername } from "@/lib/portfolio-utils";
 import { headers } from "next/headers";
-import PortfolioContentWrapper from "@/components/portfolio-content-wrapper";
+import { getTemplate } from "@/templates";
+import { PortfolioDataProvider } from "@/components/portfolio-data-provider";
+import { TemplateRenderer } from "@/components/template-renderer";
 
 export default async function Page() {
   const headersList = await headers();
@@ -33,6 +35,22 @@ export default async function Page() {
     return <ErrorPortfolio username={username} />;
   }
 
-  // Use hydration-safe wrapper for smooth client-side transition
-  return <PortfolioContentWrapper portfolioData={portfolioData} />;
+  // Get the template based on the templateId from API
+  const template = getTemplate(portfolioData.templateId);
+  
+  // If template not found, show error
+  if (!template) {
+    console.error(`Template "${portfolioData.templateId}" not found`);
+    return <ErrorPortfolio username={username} />;
+  }
+
+  // Render the selected template with client-side hydration handling
+  return (
+    <PortfolioDataProvider portfolioData={portfolioData} isLoading={false} error={null}>
+      <TemplateRenderer 
+        portfolioData={portfolioData} 
+        templateComponent={template.component}
+      />
+    </PortfolioDataProvider>
+  );
 }

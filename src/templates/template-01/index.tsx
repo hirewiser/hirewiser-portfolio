@@ -1,15 +1,15 @@
 "use client"
 
-import { HackathonCard } from "@/components/hackathon-card";
+import { HackathonCard } from "./components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
-import { ResumeCard } from "@/components/resume-card";
+import { ProjectCard } from "./components/project-card";
+import { ResumeCard } from "./components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { PortfolioData } from "@/components/portfolio-data-provider";
-import { getLinkIcon } from "@/components/portfolio-icons";
-import ResponsiveNavbar from "@/components/responsive-navbar";
+import { getLinkIcon } from "./components/portfolio-icons";
+import ResponsiveNavbar from "./components/responsive-navbar";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import posthog from "posthog-js";
@@ -23,7 +23,25 @@ const capturePostHogEvent = (username: string) => {
   })
 }
 
-export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioData }) {
+/**
+ * Template-01: Classic Portfolio
+ * 
+ * A clean and professional single-page portfolio template featuring
+ * smooth blur-fade animations, responsive design, and comprehensive sections.
+ * 
+ * Features:
+ * - Animated hero section with avatar
+ * - About section with markdown support
+ * - Work experience timeline
+ * - Education history
+ * - Skills showcase
+ * - Project gallery with images/videos
+ * - Certifications & achievements
+ * - Contact section
+ * 
+ * @param portfolioData - The user's portfolio data
+ */
+export default function Template01({ portfolioData }: { portfolioData: PortfolioData }) {
 
   useEffect(() => {
     capturePostHogEvent(portfolioData.username);
@@ -32,6 +50,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-6 md:space-y-8 px-4  md:pt-8 pb-20 md:pb-10">
       <ResponsiveNavbar portfolioData={portfolioData} />
+      
+      {/* Hero Section */}
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-6 md:space-y-8">
           <div className="gap-4 md:gap-2 flex flex-col-reverse sm:flex-row justify-between items-center sm:items-start">
@@ -57,6 +77,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </div>
       </section>
+
+      {/* About Section */}
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
@@ -69,6 +91,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </BlurFade>
       </section>
+
+      {/* Work Experience Section */}
       {portfolioData.work && portfolioData.work.length > 0 && (
         <section id="work">
           <div className="flex min-h-0 flex-col gap-y-3">
@@ -96,6 +120,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </section>
       )}
+
+      {/* Education Section */}
       {portfolioData.education && portfolioData.education.length > 0 && (
         <section id="education">
           <div className="flex min-h-0 flex-col gap-y-3">
@@ -121,6 +147,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </section>
       )}
+
+      {/* Skills Section */}
       {portfolioData.skills && portfolioData.skills.length > 0 && (
         <section id="skills">
           <div className="flex min-h-0 flex-col gap-y-3">
@@ -137,6 +165,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </section>
       )}
+
+      {/* Projects Section */}
       {portfolioData.projects && portfolioData.projects.length > 0 && (
         <section id="projects">
           <div className="space-y-12 w-full py-12">
@@ -183,6 +213,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </section>
       )}
+
+      {/* Certifications & Achievements Section */}
       {portfolioData.hackathons && portfolioData.hackathons.length > 0 && (
         <section id="hackathons">
           <div className="space-y-12 w-full py-12">
@@ -228,6 +260,8 @@ export function PortfolioContent({ portfolioData }: { portfolioData: PortfolioDa
           </div>
         </section>
       )}
+
+      {/* Contact Section */}
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>

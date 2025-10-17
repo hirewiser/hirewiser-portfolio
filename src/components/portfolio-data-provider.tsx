@@ -107,6 +107,7 @@ export interface UserProfile {
   links: Link[];
   certificates: Certificate[];
   education: Education[];
+  templateId?: string; // Optional template ID from API
 }
 
 // ============ 🔹 Transformed Portfolio Data 🔹 ============
@@ -135,6 +136,7 @@ export interface PortfolioData {
       navbar: boolean;
     }>;
   };
+  templateId?: string; // Template ID for multi-template support
 }
 
 // Transformed interfaces for UI components
