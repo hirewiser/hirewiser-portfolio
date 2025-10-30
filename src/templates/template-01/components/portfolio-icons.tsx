@@ -12,7 +12,7 @@ import {
 import { FaInstagram, FaXTwitter } from "react-icons/fa6";
 
 // Icon mapping function for links - returns JSX elements
-export const getLinkIcon = (linkTitle?: string) => {
+export const getLinkIcon = (linkTitle?: string | null) => {
   if (!linkTitle) {
     return <FaExternalLinkAlt className="size-3" />;
   }
