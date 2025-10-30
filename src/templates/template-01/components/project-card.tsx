@@ -70,7 +70,7 @@ export function ProjectCard({
           />
         )}
         {!(video || image) && (
-          <div className="h-40 w-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center"></div>
+          <div className="h-40 w-full bg-linear-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center" />
         )}
       </Link>
       <CardHeader className="px-2">
