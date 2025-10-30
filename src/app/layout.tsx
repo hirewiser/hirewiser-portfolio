@@ -20,7 +20,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cofounds Portfolio",
     description: "Cofounds portfolio showcasing skills, projects, and experience",
-    locale: "en_US",
     type: "website",
   },
   twitter: {
