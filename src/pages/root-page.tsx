@@ -12,7 +12,7 @@ function RootPage() {
       return <RootPage03 />;
     default:
       return (
-        <div className="max-w-4xl mx-auto py-20 text-red-500 font-semibold">
+        <div className="flex items-center justify-center py-20 text-red-500 font-semibold">
           The template you're looking for does not exist.
         </div>
       );

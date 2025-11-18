@@ -8,8 +8,6 @@ import ProjectPage from "./pages/project-page";
 import ExperiencePage from "./pages/experience-page";
 import { AnimatedRoutes } from "./components/animated-routes-provider";
 import { SmoothScrollProvider } from "./components/smooth-scroll-provider";
-import { Helix } from "ldrs/react";
-import "ldrs/react/Helix.css";
 import posthog from "posthog-js";
 
 const capturePostHogEvent = (username: string) => {
@@ -31,9 +29,7 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <Helix size="45" speed="2.5" color="black" />
-      </div>
+      <></>
     );
   }
 
