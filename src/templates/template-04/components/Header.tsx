@@ -72,16 +72,16 @@ function Header({ portfolioData }: HeaderProps) {
 
   return (
     <div>
-      <div className="flex justify-between items-center p-3 bg-background w-full z-20">
+      <div className="flex justify-between items-center -mt-2bg-background w-full z-20 h-7">
         <div className="flex items-center">
-          <div className="text-base text-[var(--primary)]">
+          <div className="mb-6 ml-2 text-base text-[var(--primary)]">
             {portfolioData.userName || portfolioData.firstName.toLowerCase()}
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ml-auto">
           {/* Desktop Navigation */}
-          <ul className="hidden sm:flex items-center gap-4 social-link">
+          <ul className="mb-6 hidden sm:flex items-center gap-4 social-link ">
             <li>
               <button
                 onClick={() => scrollToSection("hero")}
@@ -106,13 +106,12 @@ function Header({ portfolioData }: HeaderProps) {
                 work
               </button>
             </li>
-            
           </ul>
 
           {/* Theme Toggle */}
           <button
             onClick={handleThemeChange}
-            className="p-2 rounded-md bg-transparent hover:bg-[var(--accent)] transition-colors"
+            className="p-2 mb-6 rounded-md bg-transparent hover:bg-[var(--accent)] transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
@@ -165,22 +164,7 @@ function Header({ portfolioData }: HeaderProps) {
                 work
               </button>
             </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("moments")}
-                className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
-              >
-                moments
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("newsletter")}
-                className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
-              >
-                newsletter
-              </button>
-            </li>
+           
           </ul>
         </div>
       )}

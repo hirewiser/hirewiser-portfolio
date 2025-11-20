@@ -38,15 +38,53 @@ interface ProjectDetailsCardProps {
   relatedProjects?: Project[];
 }
 
+// Error boundary component to catch errors in the component tree
+class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Error in ProjectDetailsCard:', error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="p-4 bg-red-50 dark:bg-red-900/20 rounded-lg text-red-700 dark:text-red-300">
+          <p>Something went wrong while loading the project details.</p>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 export function ProjectDetailsCard({
   project,
   relatedProjects = [],
 }: ProjectDetailsCardProps) {
-  const technologies = project.projectSkillset || [];
-  const projectLinks = project.projectLinks || [];
+  // Ensure project is defined
+  if (!project) {
+    return (
+      <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300 rounded-lg">
+        Project data is not available.
+      </div>
+    );
+  }
+
+  const technologies = project?.projectSkillset || [];
+  const projectLinks = project?.projectLinks || [];
 
   return (
-    <div className="space-y-8">
+    <ErrorBoundary>
+      <div className="space-y-8">
       {/* Project Header */}
       <div className="space-y-4">
         {project.previewImageUrl && (
@@ -89,8 +127,11 @@ export function ProjectDetailsCard({
       {/* Tech Stack */}
       <ProjectTechStack technologies={technologies} />
 
-      {/* Related Projects */}
-      <RelatedProjects projects={relatedProjects} />
-    </div>
+        {/* Related Projects */}
+        {relatedProjects && relatedProjects.length > 0 && (
+          <RelatedProjects projects={relatedProjects} />
+        )}
+      </div>
+    </ErrorBoundary>
   );
 }

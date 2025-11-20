@@ -1,7 +1,11 @@
+"use client";
 import React, { useState, useEffect } from "react";
-import { ExternalLink } from "lucide-react";
-import type { GetUserPortfolioV3Response } from "@/types/portfolio.types";
 import { useNavigate } from "react-router-dom";
+import type { Project } from "@/types/portfolio.types";
+
+interface ProjectsProps {
+  projects: Project[];
+}
 
 interface ProjectProps {
   title: string;
@@ -9,7 +13,7 @@ interface ProjectProps {
   logo: string;
   description: string;
   preview?: string;
-  id: string; // Add id to ProjectProps
+  id: string;
 }
 
 const ProjectItem: React.FC<ProjectProps> = ({
@@ -18,29 +22,26 @@ const ProjectItem: React.FC<ProjectProps> = ({
   logo,
   description,
   preview = "/default.png",
-  id, // Add id to destructured props
+  id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   return (
     <div className="mb-8">
-      {/* Project Photo 
-      <div className="mb-4">
-        <img
-          src={preview}
-          alt={`${title} preview`}
-          className="w-full h-48 object-cover rounded-lg border border-[var(--border)]"
-        />
-      </div> */}
-      
       <div className="flex items-start">
         <div className="w-10 h-10 mr-4 flex-shrink-0">
-          <img
-            src={logo}
-            alt={`${title} logo`}
-            className="w-full h-full rounded-full object-cover border border-[var(--border)]"
-          />
+          {logo && logo !== "/default.png" ? (
+            <img
+              src={logo}
+              alt={`${title} logo`}
+              className="w-full h-full rounded-full object-cover border border-[var(--border)]"
+            />
+          ) : (
+            <div className="w-full h-full rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold text-sm">
+              {title.charAt(0).toUpperCase()}
+            </div>
+          )}
         </div>
 
         <div>
@@ -48,7 +49,8 @@ const ProjectItem: React.FC<ProjectProps> = ({
             <button
               onClick={() => navigate(`/projects/${id}`)}
               className="text-base text-[var(--foreground)] decoration-[1px] underline underline-offset-3 decoration-[var(--muted-foreground)] cursor-pointer group flex items-center bg-transparent border-0 p-0"
-             
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               {title}
               <svg
@@ -64,15 +66,37 @@ const ProjectItem: React.FC<ProjectProps> = ({
                 <polyline points="7 7 17 7 17 17"></polyline>
               </svg>
             </button>
+
             {isHovered && (
-              <div className="absolute z-10 px-3 py-2 text-sm text-white bg-[var(--tooltip)] rounded-md shadow-lg -top-10 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+              <div className="absolute z-10 left-full ml-4 top-0 w-72 p-2 shadow-lg bg-[var(--tooltip)] border border-[var(--tooltip-border)] rounded text-sm text-[var(--tooltip-foreground)]">
+                <div className="w-full h-40 overflow-hidden rounded mb-2">
+                  {preview.endsWith(".mp4") ||
+                  preview.endsWith(".webm") ||
+                  preview.endsWith(".mov") ? (
+                    <video
+                      src={preview}
+                      autoPlay
+                      muted
+                      loop
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={preview}
+                      alt={`${title} preview`}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
                 <p className="text-xs">{description}</p>
                 <div className="absolute top-3 -left-2 w-4 h-4 bg-[var(--tooltip)] border-l border-b border-[var(--tooltip-border)] transform rotate-45"></div>
               </div>
             )}
           </span>
-          <p className="text-sm text-[var(--muted-foreground)] mt-1 truncate">
-            {description.length > 100 ? `${description.substring(0, 85)}...` : description}
+          <p className="text-sm text-[var(--muted-foreground)] mt-1">
+            {description.length > 85
+              ? `${description.substring(0, 85)}...`
+              : description}
           </p>
         </div>
       </div>
@@ -105,11 +129,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     });
   }, [projects]);
 
-  const displayedProjects = projects?.slice(0, 4);
-
-  const navigateToProjectsPage = () => {
-    navigate('/projects');
-  };
+  // Show only first 3 projects on main page
+  const displayedProjects = projects?.slice(0, 3) || [];
 
   return (
     <div className="py-8 px-4">
@@ -117,7 +138,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         projects
       </h1>
       <div className="max-w-2xl">
-        {displayedProjects?.map((project) => (
+        {displayedProjects.map((project) => (
           <ProjectItem
             key={project.id}
             title={project.title}
@@ -128,17 +149,28 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             id={project.id}
           />
         ))}
-        
+
         {projects && projects.length > 3 && (
           <button
-            onClick={navigateToProjectsPage}
-            className="mt-4 text-[var(--link)] hover:underline text-sm font-medium"
+            onClick={() => navigate("/projects")}
+            className="mt-6 text-[var(--link)] hover:underline text-sm font-medium flex items-center"
           >
-            Show all projects
+            view all projects
+            <svg
+              className="w-3 h-3 ml-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
           </button>
         )}
       </div>
-    
     </div>
   );
 };

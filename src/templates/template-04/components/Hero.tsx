@@ -74,10 +74,12 @@ interface SocialLinkProps {
 const SocialLink: React.FC<SocialLinkProps> = ({ href, label }) => {
   // Determine which icon to use based on URL
   const getIcon = (url: string) => {
-    if (url.includes('github')) return <Github className="w-4 h-4 mr-1" />;
-    if (url.includes('twitter') || url.includes('x.com')) return <Twitter className="w-4 h-4 mr-1" />;
-    if (url.includes('linkedin')) return <Linkedin className="w-4 h-4 mr-1" />;
-    if (url.includes('mailto:') || url.includes('mail')) return <Mail className="w-4 h-4 mr-1" />;
+    if (url.includes("github")) return <Github className="w-4 h-4 mr-1" />;
+    if (url.includes("twitter") || url.includes("x.com"))
+      return <Twitter className="w-4 h-4 mr-1" />;
+    if (url.includes("linkedin")) return <Linkedin className="w-4 h-4 mr-1" />;
+    if (url.includes("mailto:") || url.includes("mail"))
+      return <Mail className="w-4 h-4 mr-1" />;
     return <ExternalLink className="w-4 h-4 mr-1" />;
   };
 
@@ -138,7 +140,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
   return (
-    <div className="py-8 px-4">
+    <div className=" px-4 py-7">
       <h1 className="text-3xl font-bold mb-6 text-[var(--foreground)]">
         hi, i&apos;m {portfolioData.firstName?.toLowerCase() || ""}.
       </h1>
@@ -147,27 +149,30 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
           {portfolioData.headerText || "i build things on the internet."}
         </p>
 
-      
-
         <p className="mb-4 text-base text-[var(--foreground)] whitespace-pre-line">
-          {portfolioData.description ? (() => {
-            // Function to split text after every 2 periods
-            const formatDescription = (text: string) => {
-              const parts = text.split('. ');
-              const result = [];
-              
-              for (let i = 0; i < parts.length; i += 2) {
-                const chunk = parts.slice(i, i + 2).join('. ').trim();
-                if (chunk) {
-                  result.push(chunk);
-                }
-              }
-              
-              return result.join('\n\n');
-            };
-            
-            return formatDescription(portfolioData.description);
-          })() : ''}
+          {portfolioData.description
+            ? (() => {
+                // Function to split text after every 2 periods
+                const formatDescription = (text: string) => {
+                  const parts = text.split(". ");
+                  const result = [];
+
+                  for (let i = 0; i < parts.length; i += 2) {
+                    const chunk = parts
+                      .slice(i, i + 2)
+                      .join(". ")
+                      .trim();
+                    if (chunk) {
+                      result.push(chunk);
+                    }
+                  }
+
+                  return result.join("\n\n");
+                };
+
+                return formatDescription(portfolioData.description);
+              })()
+            : ""}
         </p>
 
         <div className="mb-8">
@@ -185,8 +190,6 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
           </div>
         </div>
       </div>
-      
-     
     </div>
   );
 };
