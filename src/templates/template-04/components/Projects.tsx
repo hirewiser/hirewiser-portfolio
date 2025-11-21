@@ -1,30 +1,31 @@
 "use client";
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Project } from "@/types/portfolio.types";
 
-interface ProjectsProps {
+type ProjectsProps = {
   projects: Project[];
-}
+};
 
-interface ProjectProps {
+type ProjectProps = {
   title: string;
   link: string;
   logo: string;
   description: string;
   preview?: string;
   id: string;
-}
+};
 
 const ProjectItem: React.FC<ProjectProps> = ({
   title,
-  link,
   logo,
   description,
   preview = "/default.png",
   id,
 }) => {
+  const [imageError, setImageError] = useState(false);
+  const imageRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
@@ -35,7 +36,9 @@ const ProjectItem: React.FC<ProjectProps> = ({
           {logo && logo !== "/default.png" ? (
             <img
               src={logo}
-              alt={`${title} logo`}
+              alt={title ? `${title} logo` : 'Project logo'}
+              width={40}
+              height={40}
               className="w-full h-full rounded-full object-cover border border-[var(--border)]"
             />
           ) : (
@@ -48,6 +51,7 @@ const ProjectItem: React.FC<ProjectProps> = ({
         <div>
           <span className="relative inline-block">
             <button
+              type="button"
               onClick={() => navigate(`/projects/${id}`)}
               className="text-base text-[var(--foreground)] decoration-[1px] underline underline-offset-3 decoration-[var(--muted-foreground)] cursor-pointer group flex items-center bg-transparent border-0 p-0"
               onMouseEnter={() => setIsHovered(true)}
@@ -62,7 +66,10 @@ const ProjectItem: React.FC<ProjectProps> = ({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                role="img"
+                aria-label="External link"
               >
+                <title>External link</title>
                 <line x1="7" y1="17" x2="17" y2="7" />
                 <polyline points="7 7 17 7 17 17" />
               </svg>
@@ -73,8 +80,8 @@ const ProjectItem: React.FC<ProjectProps> = ({
                 {preview && preview !== "/default.png" && (
                   <div className="w-full h-40 overflow-hidden rounded mb-2">
                     {preview.endsWith(".mp4") ||
-                    preview.endsWith(".webm") ||
-                    preview.endsWith(".mov") ? (
+                      preview.endsWith(".webm") ||
+                      preview.endsWith(".mov") ? (
                       <video
                         src={preview}
                         autoPlay
@@ -83,18 +90,17 @@ const ProjectItem: React.FC<ProjectProps> = ({
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <img
-                        src={preview}
-                        alt={`${title} preview`}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          // If image fails to load, hide the image container
-                          const container = e.currentTarget.parentElement;
-                          if (container) {
-                            container.style.display = "none";
-                          }
-                        }}
-                      />
+                      <div ref={imageRef} className={imageError ? 'hidden' : 'block'}>
+                        <img
+                          src={preview}
+                          alt={`${title} preview`}
+                          width={800}
+                          height={600}
+                          className="w-full h-full object-cover"
+                          onError={() => setImageError(true)}
+                          aria-hidden={imageError}
+                        />
+                      </div>
                     )}
                   </div>
                 )}
@@ -132,11 +138,13 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    projects?.forEach((project) => {
-      if (project.previewImageUrl) {
-        preloadMedia(project.previewImageUrl);
+    if (projects) {
+      for (const project of projects) {
+        if (project.previewImageUrl) {
+          preloadMedia(project.previewImageUrl);
+        }
       }
-    });
+    }
   }, [projects]);
 
   // Show only first 3 projects on main page
@@ -162,6 +170,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
         {projects && projects.length > 3 && (
           <button
+            type="button"
             onClick={() => navigate("/projects")}
             className="mt-6 text-[var(--link)] hover:underline text-sm font-medium flex items-center"
           >
@@ -174,7 +183,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
+              aria-hidden="true"
             >
+              <title>View all projects</title>
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>

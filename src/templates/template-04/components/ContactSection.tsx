@@ -80,6 +80,8 @@ export default function ContactSection({
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="w-3 h-3"
+                      aria-hidden="true"
+                      focusable="false"
                     >
                       <path d="M5 12h14" />
                       <path d="M12 5v14" />
@@ -129,6 +131,8 @@ export default function ContactSection({
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="w-3 h-3"
+                      aria-hidden="true"
+                      focusable="false"
                     >
                       <path d="M5 12h14" />
                       <path d="M12 5v14" />

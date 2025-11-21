@@ -1,9 +1,9 @@
-interface ProjectMetaProps {
+type ProjectMetaProps = {
   timeline?: string;
   role?: string;
   team?: string;
   status?: string;
-}
+};
 
 export function ProjectMeta({
   timeline,

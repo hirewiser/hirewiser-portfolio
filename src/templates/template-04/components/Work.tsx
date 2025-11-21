@@ -3,61 +3,16 @@ import type React from "react";
 import { useState } from "react";
 import type { Experience } from "@/types/portfolio.types";
 
-interface LinkWithTooltipProps {
-  href: string;
-  text: string;
-  description?: string;
-}
 
-// Reusable link component with tooltip
-const LinkWithTooltip: React.FC<LinkWithTooltipProps> = ({
-  href,
-  text,
-  description,
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
 
-  return (
-    <span className="relative inline-block">
-      <a
-        href={href}
-        className="text-[var(--muted-foreground)] text-sm underline decoration-[1px] underline-offset-3 decoration-[var(--muted-foreground)] cursor-pointer group inline-flex items-center"
-        target="_blank"
-        rel="noopener noreferrer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {text}
-        <svg
-          className="w-3 h-3 ml-0.5 inline-block"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <line x1="7" y1="17" x2="17" y2="7" />
-          <polyline points="7 7 17 7 17 17" />
-        </svg>
-      </a>
 
-      {description && isHovered && (
-        <div className="absolute z-10 left-0 -bottom-24 w-64 p-3 shadow-lg bg-[var(--tooltip)] border border-[var(--tooltip-border)] rounded text-sm text-[var(--tooltip-foreground)]">
-          {description}
-          <div className="absolute -top-2 left-3 w-4 h-4 bg-[var(--tooltip)] border-t border-l border-[var(--tooltip-border)] transform rotate-45" />
-        </div>
-      )}
-    </span>
-  );
-};
 
-interface CompanyLogoProps {
+type CompanyLogoProps = {
   src: string | null;
   alt: string;
   href: string | null;
   zIndex: number;
-}
+};
 
 // Company logo component with website link and hover effect
 const CompanyLogo: React.FC<CompanyLogoProps> = ({
@@ -69,16 +24,20 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const companyName = alt.replace(" logo", "");
 
-  const commonClasses = `relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${
-    zIndex < 40 ? "-ml-4" : ""
-  } transition-all duration-200 ${
-    isHovered ? "scale-110 z-50" : `z-${zIndex}`
-  }`;
+  const commonClasses = `relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${zIndex < 40 ? "-ml-4" : ""
+    } transition-all duration-200 ${isHovered ? "scale-110 z-50" : `z-${zIndex}`
+    }`;
 
   const content = (
     <>
       {src ? (
-        <img src={src} alt={alt} className="w-full h-full object-contain" />
+        <img
+          src={src}
+          alt={alt}
+          width={48}
+          height={48}
+          className="w-full h-full object-contain"
+        />
       ) : (
         <div className="w-full h-full bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold text-sm">
           {companyName.charAt(0).toUpperCase()}
@@ -110,18 +69,21 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
   }
 
   return (
-    <div
+    <a
+      href={href || '#'}
       className={commonClasses}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ zIndex: isHovered ? 50 : zIndex }}
+      aria-label={`Visit ${alt} website`}
+      {...(href ? {} : { 'aria-hidden': 'true', tabIndex: -1 })}
     >
       {content}
-    </div>
+    </a>
   );
 };
 
-interface WorkItemProps {
+type WorkItemProps = {
   id: string;
   companyName: string;
   companyWebsite: string | null;
@@ -130,10 +92,10 @@ interface WorkItemProps {
   description: string | null;
   startedAt: string;
   endAt: string | null;
-}
+};
 
 const formatDate = (dateString: string) => {
-  if (!dateString) return "";
+  if (!dateString) { return ""; }
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 };
@@ -147,44 +109,40 @@ const WorkItem: React.FC<WorkItemProps> = ({
   startedAt,
   endAt,
 }) => {
-  const timeline = `${formatDate(startedAt)} - ${
-    endAt ? formatDate(endAt) : "Present"
-  }`;
+  const timeline = `${formatDate(startedAt)} - ${endAt ? formatDate(endAt) : "Present"
+    }`;
+
+  const renderLogo = () => {
+    const logoContent = logoURL ? (
+      <img
+        src={logoURL}
+        alt={`${companyName} logo`}
+        width={48}
+        height={48}
+        className="w-full h-full rounded-full object-cover border border-[var(--border)]"
+      />
+    ) : (
+      <div className="w-full h-full rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold">
+        {companyName.charAt(0).toUpperCase()}
+      </div>
+    );
+
+    if (companyWebsite) {
+      return (
+        <a href={companyWebsite} className="block w-12 h-12 rounded-full overflow-hidden">
+          {logoContent}
+        </a>
+      );
+    }
+
+    return logoContent;
+  };
 
   return (
     <div className="mb-8">
       <div className="flex items-start">
-        <div className="w-10 h-10 mr-4 flex-shrink-0">
-          {companyWebsite ? (
-            <a
-              href={companyWebsite}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full h-full"
-            >
-              {logoURL ? (
-                <img
-                  src={logoURL}
-                  alt={`${companyName} logo`}
-                  className="w-full h-full rounded-full object-cover border border-[var(--border)]"
-                />
-              ) : (
-                <div className="w-full h-full rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold">
-                  {companyName.charAt(0).toUpperCase()}
-                </div>
-              )}
-            </a>
-          ) : logoURL ? (
-            <img
-              src={logoURL}
-              alt={`${companyName} logo`}
-              className="w-full h-full rounded-full object-cover border border-[var(--border)]"
-            />
-          ) : (
-            <div className="w-full h-full rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold">
-              {companyName.charAt(0).toUpperCase()}
-            </div>
-          )}
+        <div className="w-12 h-12 flex-shrink-0 mr-4">
+          {renderLogo()}
         </div>
 
         <div>
@@ -202,7 +160,13 @@ const WorkItem: React.FC<WorkItemProps> = ({
               companyName
             )}
           </h3>
-          <p className="text-sm text-[var(--muted-foreground)] mb-4">{title}</p>
+          <div className="text-sm text-[var(--muted-foreground)] mb-4">
+            {title}
+            <span className="inline-flex gap-2">
+              <span className="opacity-50 ml-3 -mr-1 pb-1">•</span>
+              <span>{timeline}</span>
+            </span>
+          </div>
           <ul className="text-sm text-[var(--foreground)] list-disc pl-4 marker:text-[var(--muted-foreground)]">
             {description ? (
               <li className="mb-2">{description}</li>
@@ -218,9 +182,9 @@ const WorkItem: React.FC<WorkItemProps> = ({
   );
 };
 
-interface WorkProps {
+type WorkProps = {
   experiences: Experience[];
-}
+};
 
 const Work: React.FC<WorkProps> = ({ experiences }) => {
   const mainExperiences = experiences?.slice(0, 2) || [];

@@ -26,17 +26,17 @@ import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 declare module "@react-three/fiber" {
-  interface ThreeElements {
+  type ThreeElements = {
     meshLineGeometry: any;
     meshLineMaterial: any;
-  }
+  };
 }
 
 interface ExtendedRigidBody extends RapierRigidBody {
   lerped?: THREE.Vector3;
 }
 
-interface CardProps {
+type CardProps = {
   portfolioData: {
     firstName: string;
     lastName?: string;
@@ -44,7 +44,7 @@ interface CardProps {
     profileImage?: string;
     headerText?: string;
   };
-}
+};
 
 export default function Card({ portfolioData }: CardProps) {
   return (
@@ -96,45 +96,15 @@ export default function Card({ portfolioData }: CardProps) {
   );
 }
 
-function MatrixPattern() {
-  // Create a grid of dots that fades in size
-  const rows = 9;
-  const cols = 6;
-  const spacing = 0.2;
 
-  return (
-    <group position={[-0.5, -0.8, 0.011]}>
-      {Array.from({ length: rows }).map((_, i) =>
-        Array.from({ length: cols }).map((_, j) => {
-          // Gradient logic: Larger at bottom-left, smaller top-right
-          const factor = 1 - (i / rows + j / cols) / 2;
-          const size = Math.max(0.01, 0.06 * factor);
 
-          if (size < 0.015) return null; // Skip very small dots
-
-          return (
-            <mesh key={`${i}-${j}`} position={[j * spacing, i * spacing, 0]}>
-              <circleGeometry args={[size, 32]} />
-              <meshBasicMaterial
-                color="#ffffff"
-                transparent
-                opacity={0.3 + factor * 0.3}
-              />
-            </mesh>
-          );
-        })
-      )}
-    </group>
-  );
-}
-
-interface BandProps {
+type BandProps = {
   maxSpeed?: number;
   minSpeed?: number;
   name: string;
   title: string;
   profilePicUrl: string;
-}
+};
 
 function Band({
   maxSpeed = 50,
@@ -181,7 +151,7 @@ function Band({
     texture.repeat.set(1, 1);
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
-    texture.encoding = THREE.sRGBEncoding;
+    texture.colorSpace = THREE.SRGBColorSpace;
   });
 
   const fixedRef = fixed as unknown as React.RefObject<RapierRigidBody>;
@@ -204,7 +174,9 @@ function Band({
   useEffect(() => {
     if (hovered) {
       document.body.style.cursor = dragged ? "grabbing" : "grab";
-      return () => void (document.body.style.cursor = "auto");
+      return () => {
+        document.body.style.cursor = "auto";
+      };
     }
   }, [hovered, dragged]);
 
@@ -220,12 +192,14 @@ function Band({
         z: vec.z - dragged.z,
       };
 
-      [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
+      for (const ref of [card, j1, j2, j3, fixed]) {
+        ref.current?.wakeUp();
+      }
       card.current.setNextKinematicTranslation(newPos);
     }
 
     if (fixed.current && band.current) {
-      [j1, j2].forEach((ref) => {
+      for (const ref of [j1, j2]) {
         const rigidBody = ref.current as ExtendedRigidBody;
         if (rigidBody) {
           if (!rigidBody.lerped) {
@@ -248,15 +222,15 @@ function Band({
             Math.min(1, delta * lerpSpeed)
           );
         }
-      });
+      }
 
       if (j3.current && j2.current && j1.current) {
         const j2Body = j2.current as ExtendedRigidBody;
         const j1Body = j1.current as ExtendedRigidBody;
 
         curve.points[0].copy(j3.current.translation());
-        if (j2Body.lerped) curve.points[1].copy(j2Body.lerped);
-        if (j1Body.lerped) curve.points[2].copy(j1Body.lerped);
+        if (j2Body.lerped) { curve.points[1].copy(j2Body.lerped); }
+        if (j1Body.lerped) { curve.points[2].copy(j1Body.lerped); }
         curve.points[3].copy(fixed.current.translation());
 
         band.current.geometry.setPoints(curve.getPoints(32));
@@ -278,7 +252,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 3.4, 0]}>
+      <group position={[0, 3.2, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.4, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.12]} />
@@ -367,18 +341,19 @@ function Band({
 
             {/* Text Info - White */}
             <group position={[0, -0.5, 0.02]}>
-              <Text
-                position={[0, 0, 0]}
-                fontSize={0.3}
-                color="white"
-                font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
-                maxWidth={2.0}
-                overflowWrap="normal"
-                textAlign="center"
-                padding={0.1}
-              >
-                {name}
-              </Text>
+              <group position={[0, 0, 0]}>
+                <Text
+                  position={[0, 0.1, 0]}  // Adjust Y position for padding
+                  fontSize={0.3}
+                  color="white"
+                  font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
+                  maxWidth={1.8}  // Reduce maxWidth to create padding effect
+                  overflowWrap="normal"
+                  textAlign="center"
+                >
+                  {name}
+                </Text>
+              </group>
               <Text
                 position={[0, -0.6, 0]}
                 fontSize={0.18}

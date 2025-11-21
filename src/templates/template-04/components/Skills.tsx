@@ -2,14 +2,15 @@
 import type React from "react";
 import type { SkillsetItem } from "@/types/portfolio.types";
 
-interface SkillButtonProps {
+type SkillButtonProps = {
   name: string;
   icon: string | null;
-}
+};
 
 const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => {
   return (
     <button
+      type="button"
       className={`
         group relative px-4 py-2.5 rounded-lg border 
         border-[var(--border)] bg-[var(--muted)]
@@ -24,6 +25,8 @@ const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => {
           <img
             src={icon}
             alt={`${name} icon`}
+            width={20}
+            height={20}
             className="w-full h-full object-contain"
             onError={(e) => {
               // Fallback to text if image fails to load
@@ -39,9 +42,9 @@ const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => {
   );
 };
 
-interface SkillsProps {
+type SkillsProps = {
   skillset: SkillsetItem[];
-}
+};
 
 const Skills: React.FC<SkillsProps> = ({ skillset }) => {
   // Separate core skills and other skills

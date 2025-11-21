@@ -4,21 +4,21 @@ import { ProjectLinks } from "./ProjectLinks";
 import { ProjectTechStack } from "./ProjectTechStack";
 import { ProjectMeta } from "./ProjectMeta";
 
-interface ProjectLink {
+type ProjectLink = {
   id: string;
   linkTitle: string;
   linkUrl: string;
-}
+};
 
-interface ProjectSkill {
+type ProjectSkill = {
   id: string;
   skill: {
     id: string;
     name: string;
   };
-}
+};
 
-interface Project {
+type Project = {
   id: string;
   title: string;
   description?: string;
@@ -30,12 +30,12 @@ interface Project {
   team?: string;
   projectLinks?: ProjectLink[];
   projectSkillset?: ProjectSkill[];
-}
+};
 
-interface ProjectDetailsCardProps {
+type ProjectDetailsCardProps = {
   project: Project;
   relatedProjects?: Project[];
-}
+};
 
 // Error boundary component to catch errors in the component tree
 class ErrorBoundary extends React.Component<
@@ -94,6 +94,8 @@ export function ProjectDetailsCard({
               <img
                 src={project.previewImageUrl}
                 alt={project.title}
+                width={500}
+                height={500}
                 className="w-full h-auto object-cover"
               />
             </div>

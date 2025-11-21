@@ -55,6 +55,7 @@ function ProjectPage04() {
 
           <div className="max-w-4xl mx-auto px-5 py-20">
             <button
+              type="button"
               onClick={goBack}
               className="flex items-center text-[var(--link)] hover:underline mb-6"
             >

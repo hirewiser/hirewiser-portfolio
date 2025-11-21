@@ -4,9 +4,9 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import type { GetUserPortfolioV3Response } from "@/types/portfolio.types";
 
-interface HeaderProps {
+type HeaderProps = {
   portfolioData: GetUserPortfolioV3Response;
-}
+};
 
 function Header({ portfolioData }: HeaderProps) {
   const { theme, setTheme } = useTheme();
@@ -84,6 +84,7 @@ function Header({ portfolioData }: HeaderProps) {
           <ul className="mb-6 hidden sm:flex items-center gap-4 social-link ">
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("hero")}
                 className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -92,6 +93,7 @@ function Header({ portfolioData }: HeaderProps) {
             </li>
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("projects")}
                 className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -100,6 +102,7 @@ function Header({ portfolioData }: HeaderProps) {
             </li>
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("work")}
                 className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -110,6 +113,7 @@ function Header({ portfolioData }: HeaderProps) {
 
           {/* Theme Toggle */}
           <button
+            type="button"
             onClick={handleThemeChange}
             className="p-2 mb-6 rounded-md bg-transparent hover:bg-[var(--accent)] transition-colors"
             aria-label="Toggle theme"
@@ -123,6 +127,7 @@ function Header({ portfolioData }: HeaderProps) {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="sm:hidden p-2 rounded-md hover:bg-[var(--accent)] transition-colors"
             aria-label="Toggle menu"
@@ -142,6 +147,7 @@ function Header({ portfolioData }: HeaderProps) {
           <ul className="flex flex-col items-center gap-6 pt-8">
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("hero")}
                 className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -150,6 +156,7 @@ function Header({ portfolioData }: HeaderProps) {
             </li>
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("projects")}
                 className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >
@@ -158,6 +165,7 @@ function Header({ portfolioData }: HeaderProps) {
             </li>
             <li>
               <button
+                type="button"
                 onClick={() => scrollToSection("work")}
                 className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
               >

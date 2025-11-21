@@ -1,14 +1,14 @@
-interface ProjectSkill {
+type ProjectSkill = {
   id: string;
   skill: {
     id: string;
     name: string;
   };
-}
+};
 
-interface ProjectTechStackProps {
+type ProjectTechStackProps = {
   technologies: ProjectSkill[];
-}
+};
 
 export function ProjectTechStack({ technologies }: ProjectTechStackProps) {
   if (!technologies || technologies.length === 0) {

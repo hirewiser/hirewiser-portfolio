@@ -1,6 +1,6 @@
-interface ProjectDescriptionProps {
+type ProjectDescriptionProps = {
   description: string | null | undefined;
-}
+};
 
 export function ProjectDescription({ description }: ProjectDescriptionProps) {
   if (!description) {

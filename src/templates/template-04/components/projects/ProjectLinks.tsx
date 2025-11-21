@@ -1,14 +1,14 @@
 import { ExternalLink, Github } from "lucide-react";
 
-interface ProjectLink {
+type ProjectLink = {
   id: string;
   linkTitle: string;
   linkUrl: string;
-}
+};
 
-interface ProjectLinksProps {
+type ProjectLinksProps = {
   projectLinks: ProjectLink[];
-}
+};
 
 export function ProjectLinks({ projectLinks }: ProjectLinksProps) {
   if (!projectLinks || projectLinks.length === 0) {
