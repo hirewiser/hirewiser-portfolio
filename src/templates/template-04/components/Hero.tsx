@@ -3,8 +3,6 @@ import type React from "react";
 import { Github, Twitter, Linkedin, Mail, ExternalLink } from "lucide-react";
 import type { GetUserPortfolioV3Response } from "@/types/portfolio.types";
 
-
-
 type SocialLinkProps = {
   href: string;
   label: string;
@@ -13,11 +11,15 @@ type SocialLinkProps = {
 const SocialLink: React.FC<SocialLinkProps> = ({ href, label }) => {
   // Determine which icon to use based on URL
   const getIcon = (url: string) => {
-    if (url.includes("github")) { return <Github className="w-4 h-4 mr-1" />; }
+    if (url.includes("github")) {
+      return <Github className="w-4 h-4 mr-1" />;
+    }
     if (url.includes("twitter") || url.includes("x.com")) {
       return <Twitter className="w-4 h-4 mr-1" />;
     }
-    if (url.includes("linkedin")) { return <Linkedin className="w-4 h-4 mr-1" />; }
+    if (url.includes("linkedin")) {
+      return <Linkedin className="w-4 h-4 mr-1" />;
+    }
     if (url.includes("mailto:") || url.includes("mail")) {
       return <Mail className="w-4 h-4 mr-1" />;
     }
@@ -37,7 +39,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, label }) => {
   );
 };
 
-
 type HeroProps = {
   portfolioData: GetUserPortfolioV3Response;
 };
@@ -56,26 +57,26 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
         <p className="mb-4 text-base text-[var(--foreground)] whitespace-pre-line">
           {portfolioData.description
             ? (() => {
-              // Function to split text after every 2 periods
-              const formatDescription = (text: string) => {
-                const parts = text.split(". ");
-                const result: string[] = [];
+                // Function to split text after every 2 periods
+                const formatDescription = (text: string) => {
+                  const parts = text.split(". ");
+                  const result: string[] = [];
 
-                for (let i = 0; i < parts.length; i += 2) {
-                  const chunk = parts
-                    .slice(i, i + 2)
-                    .join(". ")
-                    .trim();
-                  if (chunk) {
-                    result.push(chunk);
+                  for (let i = 0; i < parts.length; i += 2) {
+                    const chunk = parts
+                      .slice(i, i + 2)
+                      .join(". ")
+                      .trim();
+                    if (chunk) {
+                      result.push(chunk);
+                    }
                   }
-                }
 
-                return result.join("\n\n");
-              };
+                  return result.join("\n\n");
+                };
 
-              return formatDescription(portfolioData.description);
-            })()
+                return formatDescription(portfolioData.description);
+              })()
             : ""}
         </p>
 
@@ -90,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({ portfolioData }) => {
                 .map((link) => (
                   <SocialLink
                     key={link.id}
-                    href={link.linkUrl}  // Removed the non-null assertion operator
+                    href={link.linkUrl} // Removed the non-null assertion operator
                     label={
                       link.linkTitle?.toLowerCase() ||
                       link.linkUrl?.split("/").pop()?.toLowerCase() ||

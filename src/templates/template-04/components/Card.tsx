@@ -65,7 +65,9 @@ export default function Card({ portfolioData }: CardProps) {
         <pointLight position={[-10, -10, 5]} intensity={0.2} />
         <Physics interpolate gravity={[0, -30, 0]} timeStep={1 / 120}>
           <Band
-            name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`.trim()}
+            name={`${portfolioData.firstName} ${
+              portfolioData.lastName || ""
+            }`.trim()}
             title={
               portfolioData.headerText || portfolioData.title || "Professional"
             }
@@ -95,8 +97,6 @@ export default function Card({ portfolioData }: CardProps) {
     </div>
   );
 }
-
-
 
 type BandProps = {
   maxSpeed?: number;
@@ -161,9 +161,9 @@ function Band({
   const cardRef = card as unknown as React.RefObject<RapierRigidBody>;
 
   // Joints - Increased length for larger card
-  useRopeJoint(fixedRef, j1Ref, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j1Ref, j2Ref, [[0, 0, 0], [0, 0, 0], 0.7]);
-  useRopeJoint(j2Ref, j3Ref, [[0, 0, 0], [0, 0, 0], 0.7]);
+  useRopeJoint(fixedRef, j1Ref, [[0, 0, 0], [0, 0, 0], 1.2]);
+  useRopeJoint(j1Ref, j2Ref, [[0, 0, 0], [0, 0, 0], 1.2]);
+  useRopeJoint(j2Ref, j3Ref, [[0, 0, 0], [0, 0, 0], 1.2]);
 
   // Connect the last joint (j3) directly to the top of the card
   useSphericalJoint(j3Ref, cardRef, [
@@ -229,8 +229,12 @@ function Band({
         const j1Body = j1.current as ExtendedRigidBody;
 
         curve.points[0].copy(j3.current.translation());
-        if (j2Body.lerped) { curve.points[1].copy(j2Body.lerped); }
-        if (j1Body.lerped) { curve.points[2].copy(j1Body.lerped); }
+        if (j2Body.lerped) {
+          curve.points[1].copy(j2Body.lerped);
+        }
+        if (j1Body.lerped) {
+          curve.points[2].copy(j1Body.lerped);
+        }
         curve.points[3].copy(fixed.current.translation());
 
         band.current.geometry.setPoints(curve.getPoints(32));
@@ -252,7 +256,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 3.2, 0]}>
+      <group position={[0, 4.9, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.4, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.12]} />
@@ -343,11 +347,11 @@ function Band({
             <group position={[0, -0.5, 0.02]}>
               <group position={[0, 0, 0]}>
                 <Text
-                  position={[0, 0.1, 0]}  // Adjust Y position for padding
+                  position={[0, 0.1, 0]} // Adjust Y position for padding
                   fontSize={0.3}
                   color="white"
                   font="https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff"
-                  maxWidth={1.8}  // Reduce maxWidth to create padding effect
+                  maxWidth={1.8} // Reduce maxWidth to create padding effect
                   overflowWrap="normal"
                   textAlign="center"
                 >
@@ -374,7 +378,7 @@ function Band({
       </group>
 
       {/* The Lanyard/Band MeshLine */}
-      <mesh ref={band}>
+      <mesh ref={band} position={[0, 0.2, 0]}>
         <meshLineGeometry />
         <meshLineMaterial
           color={bandColor}

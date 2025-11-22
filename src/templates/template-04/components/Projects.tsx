@@ -36,7 +36,7 @@ const ProjectItem: React.FC<ProjectProps> = ({
           {logo && logo !== "/default.png" ? (
             <img
               src={logo}
-              alt={title ? `${title} logo` : 'Project logo'}
+              alt={title ? `${title} logo` : "Project logo"}
               width={40}
               height={40}
               className="w-full h-full rounded-full object-cover border border-[var(--border)]"
@@ -80,8 +80,8 @@ const ProjectItem: React.FC<ProjectProps> = ({
                 {preview && preview !== "/default.png" && (
                   <div className="w-full h-40 overflow-hidden rounded mb-2">
                     {preview.endsWith(".mp4") ||
-                      preview.endsWith(".webm") ||
-                      preview.endsWith(".mov") ? (
+                    preview.endsWith(".webm") ||
+                    preview.endsWith(".mov") ? (
                       <video
                         src={preview}
                         autoPlay
@@ -90,7 +90,10 @@ const ProjectItem: React.FC<ProjectProps> = ({
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <div ref={imageRef} className={imageError ? 'hidden' : 'block'}>
+                      <div
+                        ref={imageRef}
+                        className={imageError ? "hidden" : "block"}
+                      >
                         <img
                           src={preview}
                           alt={`${title} preview`}

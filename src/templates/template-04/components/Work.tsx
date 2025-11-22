@@ -3,10 +3,6 @@ import type React from "react";
 import { useState } from "react";
 import type { Experience } from "@/types/portfolio.types";
 
-
-
-
-
 type CompanyLogoProps = {
   src: string | null;
   alt: string;
@@ -24,9 +20,11 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const companyName = alt.replace(" logo", "");
 
-  const commonClasses = `relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${zIndex < 40 ? "-ml-4" : ""
-    } transition-all duration-200 ${isHovered ? "scale-110 z-50" : `z-${zIndex}`
-    }`;
+  const commonClasses = `relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${
+    zIndex < 40 ? "-ml-4" : ""
+  } transition-all duration-200 ${
+    isHovered ? "scale-110 z-50" : `z-${zIndex}`
+  }`;
 
   const content = (
     <>
@@ -70,13 +68,13 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
 
   return (
     <a
-      href={href || '#'}
+      href={href || "#"}
       className={commonClasses}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ zIndex: isHovered ? 50 : zIndex }}
       aria-label={`Visit ${alt} website`}
-      {...(href ? {} : { 'aria-hidden': 'true', tabIndex: -1 })}
+      {...(href ? {} : { "aria-hidden": "true", tabIndex: -1 })}
     >
       {content}
     </a>
@@ -95,7 +93,9 @@ type WorkItemProps = {
 };
 
 const formatDate = (dateString: string) => {
-  if (!dateString) { return ""; }
+  if (!dateString) {
+    return "";
+  }
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 };
@@ -109,8 +109,9 @@ const WorkItem: React.FC<WorkItemProps> = ({
   startedAt,
   endAt,
 }) => {
-  const timeline = `${formatDate(startedAt)} - ${endAt ? formatDate(endAt) : "Present"
-    }`;
+  const timeline = `${formatDate(startedAt)} - ${
+    endAt ? formatDate(endAt) : "Present"
+  }`;
 
   const renderLogo = () => {
     const logoContent = logoURL ? (
@@ -129,7 +130,10 @@ const WorkItem: React.FC<WorkItemProps> = ({
 
     if (companyWebsite) {
       return (
-        <a href={companyWebsite} className="block w-12 h-12 rounded-full overflow-hidden">
+        <a
+          href={companyWebsite}
+          className="block w-12 h-12 rounded-full overflow-hidden"
+        >
           {logoContent}
         </a>
       );
@@ -141,9 +145,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
   return (
     <div className="mb-8">
       <div className="flex items-start">
-        <div className="w-12 h-12 flex-shrink-0 mr-4">
-          {renderLogo()}
-        </div>
+        <div className="w-12 h-12 flex-shrink-0 mr-4">{renderLogo()}</div>
 
         <div>
           <h3 className="text-base font-medium text-[var(--foreground)]">
