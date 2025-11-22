@@ -12,13 +12,20 @@ type ProjectCardProps = {
   project: ProjectType;
 };
 
+function stripHtml(html: string | null) {
+  if (!html) {
+    return "";
+  }
+
+  return html.replace(/<[^>]*>?/gm, "");
+}
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   const projectId = project.id;
   const projectImage = project.previewImageUrl || "";
   const skills = project.projectSkillset || [];
   const projectStatus = project.status || "In Progress";
 
-  // Get status styling based on project status
   const getStatusStyles = (status: string) => {
     switch (status) {
       case "Completed":
@@ -56,7 +63,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   const statusStyles = getStatusStyles(projectStatus);
 
-  // Get valid links
   const validLinks = (project.projectLinks || []).filter(
     (link) => link?.linkUrl && link.linkUrl.trim() !== ""
   );
@@ -72,10 +78,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     link.linkTitle?.toLowerCase().includes("github")
   );
 
+  const strippedDescription = stripHtml(project.description);
+
+  const MAX_LENGTH = 75;
+
   const truncatedDesc =
-    project.description && project.description.length > 75
-      ? `${project.description.slice(0, 75)}...`
-      : project.description || "No description available.";
+    strippedDescription.length > MAX_LENGTH
+      ? `${strippedDescription.slice(0, MAX_LENGTH)}...`
+      : strippedDescription || "No description available.";
 
   return (
     <div className="group overflow-hidden transition-all border border-gray-100 rounded-lg shadow-sm hover:shadow-md dark:border-gray-800">
@@ -187,7 +197,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {skills.length > 2 && (
                 <button
                   type="button"
-                  className="group inline-flex items-center text-sm bg-black/5 border border-dashed border-black/20 py-1 px-2 rounded-md text-black"
+                  className="group inline-flex items-center text-sm bg-black/5 border border-dashed border-black/20 py-1 px-2 rounded-md text-black dark:bg-white/5 dark:border-white/20 dark:text-white"
                 >
                   +{skills.length - 2} more
                 </button>

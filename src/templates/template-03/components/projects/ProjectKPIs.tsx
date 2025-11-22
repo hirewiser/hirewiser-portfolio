@@ -37,7 +37,11 @@ export function ProjectKPIs({ projectKPIs }: ProjectKPIsProps) {
       <div
         className={`rounded-xl border p-6 ${KPI_TYPE_STYLES[KPI_CHALLENGES].container}`}
       >
-        <h4 className={`mb-3 text-xl font-bold ${KPI_TYPE_STYLES[KPI_CHALLENGES].heading}`}>Key Challenges</h4>
+        <h4
+          className={`mb-3 text-xl font-bold ${KPI_TYPE_STYLES[KPI_CHALLENGES].heading}`}
+        >
+          Key Challenges
+        </h4>
         {challenges.length > 0 ? (
           <ul className="space-y-2 list-disc list-inside">
             {challenges.map((kpi, i) => (
@@ -47,14 +51,20 @@ export function ProjectKPIs({ projectKPIs }: ProjectKPIsProps) {
             ))}
           </ul>
         ) : (
-          <div className="italic text-sm text-yellow-700">No Key Challenges listed</div>
+          <div className="italic text-sm text-yellow-700">
+            No Key Challenges listed
+          </div>
         )}
       </div>
       {/* Key Learnings */}
       <div
         className={`rounded-xl border p-6 ${KPI_TYPE_STYLES[KPI_LEARNINGS].container}`}
       >
-        <h4 className={`mb-3 text-xl font-bold ${KPI_TYPE_STYLES[KPI_LEARNINGS].heading}`}>Key Learnings</h4>
+        <h4
+          className={`mb-3 text-xl font-bold ${KPI_TYPE_STYLES[KPI_LEARNINGS].heading}`}
+        >
+          Key Learnings
+        </h4>
         {learnings.length > 0 ? (
           <ul className="space-y-2 list-disc list-inside">
             {learnings.map((kpi, i) => (
@@ -64,7 +74,9 @@ export function ProjectKPIs({ projectKPIs }: ProjectKPIsProps) {
             ))}
           </ul>
         ) : (
-          <div className="italic text-sm text-green-700">No Key Learnings listed</div>
+          <div className="italic text-sm text-green-700">
+            No Key Learnings listed
+          </div>
         )}
       </div>
     </div>

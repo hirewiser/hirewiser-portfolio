@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { SkillBadge } from "./SkillBadge";
+import parse from "html-react-parser";
+
+const WHITE_SPACE_REGEX = /\s+/;
 
 type SkillItem = {
   skill: { id: string; name: string };
@@ -15,6 +18,14 @@ type AboutProps = {
   name?: string;
 };
 
+function stripHtml(html: string | null | undefined): string {
+  if (!html) {
+    return "";
+  }
+
+  return html.replace(/<[^>]*>?/gm, "");
+}
+
 export default function About({
   avatar,
   name,
@@ -23,9 +34,10 @@ export default function About({
 }: AboutProps) {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  // Truncate text (first 30 words)
+  const plainTextAbout = stripHtml(about);
+
   const truncateText = (text: string, maxWords = 30) => {
-    const words = text.split(" ");
+    const words = text.split(WHITE_SPACE_REGEX);
     if (words.length <= maxWords) {
       return { text, isTruncated: false };
     }
@@ -35,7 +47,8 @@ export default function About({
     };
   };
 
-  const { text: displayText, isTruncated } = truncateText(about || "");
+  const { text: truncatedPlainText, isTruncated } =
+    truncateText(plainTextAbout);
 
   const [showAllSkills, setShowAllSkills] = useState(false);
   const visibleSkills = showAllSkills ? skillset : skillset.slice(0, 5);
@@ -70,9 +83,9 @@ export default function About({
         <div>
           <h2 className="text-xl font-semibold">{name || "Your Name"}</h2>
 
-          {/* About text */}
-          <div className="text-gray-600 mt-2 leading-relaxed text-[15px] mb-2">
-            {showFullDescription ? about : displayText}
+          {/* About text - Use HTML Parser for full description, plain text for truncated */}
+          <div className="text-gray-600 mt-2 leading-relaxed text-[15px] mb-2 typography">
+            {showFullDescription ? parse(about) : truncatedPlainText}
           </div>
 
           {/* Link-style read more */}

@@ -21,12 +21,19 @@ const extractGitHubUsername = (url: string): string | null => {
 };
 
 const extractCalcomLink = (
-  links: Array<{ linkTitle?: string; linkUrl?: string }> | undefined
+  links:
+    | Array<{
+        linkTitle?: string;
+        linkUrl?: string;
+        integrationsEnabled?: boolean;
+      }>
+    | undefined
 ): { calLink: string; isEnabled: boolean } => {
   const link = links?.find(
     (l) =>
-      l.linkTitle?.toLowerCase() === "cal.com" ||
-      l.linkUrl?.toLowerCase().includes("cal.com")
+      l.integrationsEnabled &&
+      (l.linkTitle?.toLowerCase() === "cal.com" ||
+        l.linkUrl?.toLowerCase().includes("cal.com"))
   );
   const calLink = link?.linkUrl || "";
   return { calLink, isEnabled: Boolean(calLink) };
@@ -45,13 +52,12 @@ function RootPage03() {
   }
 
   const githubUrl =
-    portfolioData?.links?.find((l) => l.linkTitle?.toLowerCase() === "github")
-      ?.linkUrl || "";
+    portfolioData?.links?.find(
+      (l) => l.linkTitle?.toLowerCase() === "github" && l.integrationsEnabled
+    )?.linkUrl || "";
   const githubUsername = githubUrl ? extractGitHubUsername(githubUrl) : null;
 
-  const { calLink, isEnabled: isCalcomEnabled } = extractCalcomLink(
-    portfolioData?.links
-  );
+  const { calLink } = extractCalcomLink(portfolioData?.links);
 
   return (
     <div className="min-h-screen w-full bg-white relative overflow-hidden font-hanken-grotesk">
@@ -101,7 +107,7 @@ function RootPage03() {
               </div>
             </div>
             {/* GITHUB CONTRIBUTIONS */}
-            {githubUsername && (
+            {portfolioData.integrationsEnabled && githubUsername && (
               <div>
                 <div className="max-w-3xl mx-auto px-5 pb-15">
                   <GitHubContributions githubUsername={githubUsername} />
@@ -110,18 +116,19 @@ function RootPage03() {
             )}
 
             {/* CONTACT */}
-            <div>
-              <div className="max-w-3xl mx-auto px-5 pb-15">
-                <ContactSection
-                  profileImage={portfolioData.profileImage ?? ""}
-                  name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`}
-                  preText="Get in touch to discuss opportunities or collaborations"
-                  linkText="Contact Me"
-                  calLink={calLink}
-                  isCalcomEnabled={isCalcomEnabled}
-                />
+            {portfolioData.integrationsEnabled && calLink && (
+              <div>
+                <div className="max-w-3xl mx-auto px-5 pb-15">
+                  <ContactSection
+                    profileImage={portfolioData.profileImage ?? ""}
+                    name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`}
+                    preText="Get in touch to discuss opportunities or collaborations"
+                    linkText="Contact Me"
+                    calLink={calLink}
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

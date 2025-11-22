@@ -1,1103 +1,1103 @@
 [
-    {
-        "id": "0f3e349e-baf5-43dd-8ce1-3ea8001dc744",
-        "userName": "dev123",
-        "firstName": "Example First Name",
-        "lastName": "Example Last Name",
-        "email": "example@example.com",
-        "phone": "1234567890",
-        "headerText": "Building Cofounds.",
-        "headerImage": "public/data/placeholder_common.jpg",
-        "profileImage": "public/data/placeholder_common.jpg",
-        "description": "I'm Devasaya Singh, a developer who enjoys diving deep into both code and concepts. Whether it's experimenting with new tech or pondering the \"why\" behind how things work, I thrive in spaces where curiosity leads. What Drives Me \"Reinventing the wheel isn't pointless if you're trying to understand how it's built.\" I value learning by doing, even if it means breaking things in the process. Every bug, crash, or unexpected result is a step closer to understanding. Random Facts I enjoy philosophical conversations as much as debugging sessions. I sometimes build things just because they seem interesting. I'm not afraid to scrap entire projects if I’ve learned something better in the process. Want to Know More? Feel free to explore my projects on GitHub: https://example.com\nI try to keep it updated with whatever I’m working on or experimenting with.",
-        "templateId": "67716bde-307c-42e9-98d3-cc7dcd8deaf6",
-        "country": "India",
-        "state": "Haryana",
-        "city": null,
-        "template": {
-            "name": "template-03"
-        },
-        "skillset": [
-            {
-                "id": "091a8d19-c1ec-40f2-b915-841928ab8f0f",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "5c2af5c6-edbf-4e60-afd6-cc309bbe772f",
-                    "name": "Decision Making",
-                    "category": null
-                }
-            },
-            {
-                "id": "37913bba-70a4-4ac0-bc58-35b54888da05",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "1552b848-10f8-4ed9-9c03-a17410aa4b13",
-                    "name": "Data Analysis",
-                    "category": null
-                }
-            },
-            {
-                "id": "2ecc7385-9ea8-48a1-8d55-a8e10b6d89b6",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "49aeca79-9295-4d25-9985-57c6c1e8c505",
-                    "name": "Problem Solving",
-                    "category": null
-                }
-            },
-            {
-                "id": "4b950732-6001-4361-9b18-ec264f1b5da6",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "863d82b0-85c5-4507-9efc-83ec5bcf34fd",
-                    "name": "SEO Optimization",
-                    "category": null
-                }
-            },
-            {
-                "id": "437cb79f-580a-4ed5-bb51-25a4b73cabd8",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "e3faa98f-8e67-4006-8513-7035888696ab",
-                    "name": "Cloud Computing",
-                    "category": null
-                }
-            },
-            {
-                "id": "1289d538-b448-4189-b7ab-3cbf1ed17482",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "d22fd422-668a-4346-9758-7f4bcd5e57d3",
-                    "name": "Productivity",
-                    "category": null
-                }
-            },
-            {
-                "id": "03dff647-fd7b-4b94-a449-724d08aac511",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "3b7a9ff3-2b75-4623-90bf-36fd36ae5eb7",
-                    "name": "Ollama",
-                    "category": null
-                }
-            },
-            {
-                "id": "7a051c34-8845-45fc-86f5-4914fa293c74",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
-                    "name": "Critical Thinking",
-                    "category": null
-                }
-            },
-            {
-                "id": "d14536be-abbf-4f02-8ffb-b280ec30ac6f",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "3574f1ac-af2e-4cc1-93d2-d751eb1aade2",
-                    "name": "Adaptability",
-                    "category": null
-                }
-            },
-            {
-                "id": "32d3417a-8369-437e-8cc7-474aa0c8dd39",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "9381a22e-9250-4efb-a614-ec0a8abdbf95",
-                    "name": "Teamwork",
-                    "category": null
-                }
-            },
-            {
-                "id": "7caa6204-ddb1-4dc5-bd9f-82c29666e25c",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "562d0bcc-84de-4f01-801e-f992b46a3e8b",
-                    "name": "Machine Learning",
-                    "category": null
-                }
-            },
-            {
-                "id": "201f498e-f09d-4388-83d2-c773e4d44f24",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "91b4c651-9afb-46b1-8d68-b0a743aa1f29",
-                    "name": "Negotiation",
-                    "category": null
-                }
-            },
-            {
-                "id": "5216e164-587d-4ce8-bbc4-71d8748da6de",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "da9c05aa-22eb-4555-8bac-f6b547a81cab",
-                    "name": "Artificial Intelligence",
-                    "category": null
-                }
-            },
-            {
-                "id": "163bb7f9-3203-4b49-acbb-d17090e1aace",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "12e2bba0-cae0-4870-82c3-757f475c714d",
-                    "name": "Branding & Messaging",
-                    "category": null
-                }
-            },
-            {
-                "id": "e0831a12-bd7d-4819-a32d-102c87fed4e1",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "6c55642b-1aaa-4226-8963-82e7df112f40",
-                    "name": "Blockchain",
-                    "category": null
-                }
-            },
-            {
-                "id": "2d0d919b-f569-4c0a-a58a-6a5772e8437e",
-                "icon": "https://skillicons.dev/icons?i=cpp",
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
-                    "name": "C++",
-                    "category": null
-                }
-            },
-            {
-                "id": "e91c5b83-edb9-424d-9bc0-2c2484c56b6a",
-                "icon": null,
-                "color": "#053c94",
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "6d00af8e-e24d-45eb-9c6d-31eb3430a9f5",
-                    "name": "Creativity",
-                    "category": null
-                }
-            },
-            {
-                "id": "2c17ae97-44a2-4061-9377-2e76384507fe",
-                "icon": "https://skillicons.dev/icons?i=html",
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "296dfca4-cd6e-4c93-ab4c-c823ba4eee00",
-                    "name": "HTML5",
-                    "category": null
-                }
-            },
-            {
-                "id": "97d9c73a-e6c6-4949-b17a-fa883ea565cf",
-                "icon": "https://skillicons.dev/icons?i=nextjs",
-                "color": null,
-                "isCoreSkill": true,
-                "skill": {
-                    "id": "6418cbce-9925-4c00-b704-607197f924bf",
-                    "name": "Next JS",
-                    "category": null
-                }
-            },
-            {
-                "id": "235cad52-e35e-446b-a12f-5868032b6c9d",
-                "icon": "https://skillicons.dev/icons?i=aws",
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "f6d1647c-14c0-44af-bc26-c9124aa25842",
-                    "name": "AWS",
-                    "category": null
-                }
-            },
-            {
-                "id": "19e82267-17a7-465e-b0f5-77e837a90931",
-                "icon": "https://skillicons.dev/icons?i=nodejs",
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "0d5a1a8c-fbef-488d-a43f-c794331ee3b8",
-                    "name": "Node.js",
-                    "category": null
-                }
-            },
-            {
-                "id": "7de06ad7-f7b2-4480-ab40-8c209745e94a",
-                "icon": "https://skillicons.dev/icons?i=react",
-                "color": null,
-                "isCoreSkill": true,
-                "skill": {
-                    "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
-                    "name": "React",
-                    "category": null
-                }
-            },
-            {
-                "id": "2ac5f521-be50-46f1-a30c-978dfd240892",
-                "icon": null,
-                "color": "#2d3643",
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "653fd95f-e237-47bb-8959-53097a02cf1f",
-                    "name": "Cybersecurity",
-                    "category": null
-                }
-            },
-            {
-                "id": "c29b7dae-0581-4533-bce6-41a9ecd80018",
-                "icon": "https://skillicons.dev/icons?i=javascript",
-                "color": null,
-                "isCoreSkill": true,
-                "skill": {
-                    "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
-                    "name": "JavaScript",
-                    "category": null
-                }
-            },
-            {
-                "id": "4cf259c9-a7a4-4e8a-8ccd-eafc5a797aed",
-                "icon": "https://skillicons.dev/icons?i=py",
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "68232988-e6c5-4398-9f63-a1308872b4ff",
-                    "name": "Python",
-                    "category": null
-                }
-            },
-            {
-                "id": "27db8050-f131-4b4b-96e7-36aab4c14f24",
-                "icon": null,
-                "color": "#000000",
-                "isCoreSkill": true,
-                "skill": {
-                    "id": "01fb3289-3496-41ad-8433-f67234771656",
-                    "name": "Active Listening",
-                    "category": null
-                }
-            }
-        ],
-        "projects": [
-            {
-                "id": "11836316-a919-4830-a813-581a94bd10d9",
-                "title": "TCE",
-                "description": "Text Editor in C 🚀 A simple, lightweight text editor built from scratch in pure C! Think nano, but much simpler. No external libraries, just standard C functions for handling input, output, and file operations. Features ✅ Real-time typing – Instantly displays characters as you type. ✅ Basic text editing – Supports typing, deleting (Backspace), and saving files. ✅ Save & Exit Shortcuts – CTRL+S → Save text to output.txt. CTRL+Q → Quit the editor. Installation & Setup 1️⃣ Compile the code Make sure you have GCC installed, then run: gcc main.c input.c screen.c file_io.c editor.c -o text_editor.exe 2️⃣ Run the editor text_editor.exe",
-                "link": "example.com",
-                "linkName": null,
-                "startedAt": "2024-03-01T00:00:00.000Z",
-                "endAt": null,
-                "previewImageUrl": null,
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [],
-                "projectSkillset": [],
-                "projectKPI": []
-            },
-            {
-                "id": "db1e3adf-8f93-4504-8e50-054f21653ba7",
-                "title": " ABCD",
-                "description": "This is a short first paragraph about the project. It briefly explains what the user should expect.\n\nHere is the second paragraph, separated by a blank line. It adds a little more context without being too long.\n\nThis third paragraph is intentionally short.\n\nAnd here is a fourth paragraph that appears after two line breaks.\n\n\nThis final paragraph checks whether extra spacing is preserved properly.\n",
-                "link": null,
-                "linkName": null,
-                "startedAt": null,
-                "endAt": null,
-                "previewImageUrl": "public/data/placeholder_common.jpg",
-                "timeline": "3 Months",
-                "role": "FDA",
-                "team": null,
-                "status": "In Progress",
-                "projectLinks": [
-                    {
-                        "id": "01e9245b-61ef-420a-9f57-f3827c144c78",
-                        "linkUrl": "example.com",
-                        "linkTitle": "Github"
-                    }
-                ],
-                "projectSkillset": [
-                    {
-                        "id": "76433b7d-f1c6-496a-846e-3154e7db7cc4",
-                        "icon": "https://skillicons.dev/icons?i=docker",
-                        "color": null,
-                        "skill": {
-                            "id": "e1eb669d-f7a6-48a5-ade7-64c1960756cd",
-                            "name": "Docker",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "cc8e6276-bf9c-45f3-9177-107c18460d5f",
-                        "icon": "https://skillicons.dev/icons?i=react",
-                        "color": null,
-                        "skill": {
-                            "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
-                            "name": "React",
-                            "category": null
-                        }
-                    }
-                ],
-                "projectKPI": [
-                    {
-                        "id": "d7d515b8-0d9c-461d-8ca2-6bbe94ed56dc",
-                        "point": "ABCD",
-                        "type": "Key Challenges"
-                    },
-                    {
-                        "id": "73f55a26-af28-4f20-b7e1-b355cd321b41",
-                        "point": "1234",
-                        "type": "Key Learnings"
-                    }
-                ]
-            },
-            {
-                "id": "119070fa-ff01-4dc8-92d2-f90114c671bc",
-                "title": "Ask Sales Guru",
-                "description": "A Reddit-style threaded post system. Biggest challenge: handling deeply nested replies. I initially leaned on AI to generate a directed graph model for replies, but it kept messing up. After days of trial and error, I realized the concepts (trees, graphs) are the hard part — not the syntax. That project forced me to finally respect data structures in practice. Another learning: Vite’s SPA defaults don’t work on Vercel unless you add a vercel.json config. That was my crash course in understanding deployment quirks.",
-                "link": "example.com",
-                "linkName": "Webapp",
-                "startedAt": "2025-08-15T00:00:00.000Z",
-                "endAt": "2025-09-15T00:00:00.000Z",
-                "previewImageUrl": "public/data/placeholder_common.jpg",
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [
-                    {
-                        "id": "7a8786fb-4c74-4bd5-a1a5-f278f9489060",
-                        "linkUrl": "example.com",
-                        "linkTitle": "Interest"
-                    }
-                ],
-                "projectSkillset": [
-                    {
-                        "id": "b1831e07-4f9f-4766-aec7-3150e8fc4490",
-                        "icon": null,
-                        "color": null,
-                        "skill": {
-                            "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
-                            "name": "JavaScript",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "4ee1f5e9-c9b6-4d1c-b310-ded9fcb7ad6e",
-                        "icon": null,
-                        "color": null,
-                        "skill": {
-                            "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
-                            "name": "React",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "8a8bf8aa-0276-4675-bb4d-b370ee6f1c44",
-                        "icon": null,
-                        "color": null,
-                        "skill": {
-                            "id": "6418cbce-9925-4c00-b704-607197f924bf",
-                            "name": "Next JS",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "ae49ab2c-e441-4050-a1ce-5791eaf68519",
-                        "icon": null,
-                        "color": null,
-                        "skill": {
-                            "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
-                            "name": "Critical Thinking",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "215d9b66-cb24-4cff-a673-0db7d76a85bc",
-                        "icon": null,
-                        "color": null,
-                        "skill": {
-                            "id": "b4bca835-3312-4c01-9a33-df276e07ca27",
-                            "name": "Typescript",
-                            "category": null
-                        }
-                    }
-                ],
-                "projectKPI": []
-            },
-            {
-                "id": "c8fd3fa7-8bfd-4452-bb57-d2ba68b79ec1",
-                "title": "Devgruh",
-                "description": "A webapp for user management in a spiritual event.",
-                "link": "example.com",
-                "linkName": null,
-                "startedAt": "2025-06-15T00:00:00.000Z",
-                "endAt": "2025-06-15T00:00:00.000Z",
-                "previewImageUrl": "public/data/placeholder_common.jpg",
-                "timeline": null,
-                "role": "Fullstack Developer",
-                "team": "Solo",
-                "status": "Completed",
-                "projectLinks": [
-                    {
-                        "id": "6d078830-20c5-4067-b3cc-da59b07908a2",
-                        "linkUrl": "example.com",
-                        "linkTitle": "Github"
-                    }
-                ],
-                "projectSkillset": [
-                    {
-                        "id": "4f0b7a13-98e6-4c84-ac39-786b74483999",
-                        "icon": "https://skillicons.dev/icons?i=js",
-                        "color": null,
-                        "skill": {
-                            "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
-                            "name": "JavaScript",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "f6823ef9-ceb3-4428-9b56-a73aff4fcb91",
-                        "icon": "https://skillicons.dev/icons?i=nextjs",
-                        "color": null,
-                        "skill": {
-                            "id": "6418cbce-9925-4c00-b704-607197f924bf",
-                            "name": "Next JS",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "38cfa9b2-c1c8-4807-9d7f-a84492c0c5f3",
-                        "icon": null,
-                        "color": "#171717",
-                        "skill": {
-                            "id": "da9c05aa-22eb-4555-8bac-f6b547a81cab",
-                            "name": "Artificial Intelligence",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "63a2fa0b-46b1-4e1a-a165-02a00cd77616",
-                        "icon": null,
-                        "color": "#3B82F6",
-                        "skill": {
-                            "id": "189a5e26-2d60-40bf-a5bf-91a6639c53e6",
-                            "name": "Communication",
-                            "category": null
-                        }
-                    }
-                ],
-                "projectKPI": [
-                    {
-                        "id": "bee8374b-230f-4bb5-adfe-f95d394b1ff3",
-                        "point": "jbjbjwf",
-                        "type": "Key Challenges"
-                    },
-                    {
-                        "id": "df7fb478-6373-4b68-bc37-bcb3772d14f1",
-                        "point": "1234",
-                        "type": "Key Learnings"
-                    },
-                    {
-                        "id": "cd03cbff-dfd7-44da-9726-5acc972d0005",
-                        "point": "vggv",
-                        "type": "Key Challenges"
-                    }
-                ]
-            },
-            {
-                "id": "98d9ae6e-10f9-44ab-84e3-ad663def66ff",
-                "title": "CPP-Weather",
-                "description": "CPP Weather CLI A C++ console-based application that fetches and displays the current temperature of a city using the OpenWeatherMap API. Features Fetches real-time weather data. Parses JSON responses using the nlohmann/json library. Displays current temperature in Celsius. Allows users to select from a list of cities. Available Cities The following cities are pre-configured in the program: Mumbai Delhi Bangalore Hyderabad Chennai Kolkata Pune Jaipur Ahmedabad Lucknow",
-                "link": "example.com",
-                "linkName": null,
-                "startedAt": "2024-09-01T00:00:00.000Z",
-                "endAt": "2024-12-01T00:00:00.000Z",
-                "previewImageUrl": null,
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [],
-                "projectSkillset": [],
-                "projectKPI": []
-            },
-            {
-                "id": "c999829b-13ae-4165-b499-193e56a32dc3",
-                "title": "Road-Accident-Analysis",
-                "description": "Road Accident Data Analysis A Jupyter Notebook that helps us to see the frequency of road accidents on Indian roads based on different terrains. Dataset link: Road Accidents in India (2014-2017)",
-                "link": "example.com",
-                "linkName": null,
-                "startedAt": "2023-12-30T00:00:00.000Z",
-                "endAt": "2024-01-01T00:00:00.000Z",
-                "previewImageUrl": null,
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [],
-                "projectSkillset": [],
-                "projectKPI": []
-            }
-        ],
-        "experience": [
-            {
-                "id": "6b2cb60b-16cf-4166-aa8b-54490d3ae733",
-                "title": "Fullstack Developer",
-                "companyName": "Devgruh",
-                "companyWebsite": null,
-                "companyX": null,
-                "companyLinkedin": null,
-                "description": "Made an app for registering users for Akhand Hanuman Chalisa Path. Used the user data for better insights and analysis of how it helped over google forms.",
-                "startedAt": "2025-07-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": null,
-                "userExperienceSkillsets": []
-            },
-            {
-                "id": "a27850d8-bef6-479a-b1f6-276bdaa8aeb1",
-                "title": "Fullstack Developer Intern",
-                "companyName": "Pinterest",
-                "companyWebsite": "example.com",
-                "companyX": "",
-                "companyLinkedin": "",
-                "description": "",
-                "startedAt": "2025-01-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": "public/data/placeholder_common.jpg",
-                "userExperienceSkillsets": [
-                    {
-                        "id": "dd1b1fd2-94cc-4b88-bc6c-71cb97d92254",
-                        "icon": "https://skillicons.dev/icons?i=cpp",
-                        "color": "",
-                        "skill": {
-                            "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
-                            "name": "C++",
-                            "category": null
-                        }
-                    }
-                ]
-            },
-            {
-                "id": "b5d57ba3-3f6a-4446-9153-a9a06ee70da2",
-                "title": "GTM Strategist",
-                "companyName": "ABC Labs",
-                "companyWebsite": null,
-                "companyX": null,
-                "companyLinkedin": null,
-                "description": null,
-                "startedAt": null,
-                "endAt": null,
-                "logoURL": null,
-                "userExperienceSkillsets": []
-            },
-            {
-                "id": "4233aec4-ce4c-4de9-8815-5d072e1ba20f",
-                "title": "Tech Lead",
-                "companyName": "Cofounds Tech Services Pvt. Ltd",
-                "companyWebsite": "example.com",
-                "companyX": "",
-                "companyLinkedin": "",
-                "description": "This is a short first paragraph about the project. It briefly explains what the user should expect.\n\nHere is the second paragraph, separated by a blank line. It adds a little more context without being too long.\n\nThis third paragraph is intentionally short.\n\nAnd here is a fourth paragraph that appears after two line breaks.\n\n\nThis final paragraph checks whether extra spacing is preserved properly.",
-                "startedAt": "2025-05-01T00:00:00.000Z",
-                "endAt": "2025-10-15T00:00:00.000Z",
-                "logoURL": "public/data/placeholder_common.jpg",
-                "userExperienceSkillsets": [
-                    {
-                        "id": "e403d00a-9574-4588-aaa4-17a49207b736",
-                        "icon": "https://skillicons.dev/icons?i=nextjs",
-                        "color": "",
-                        "skill": {
-                            "id": "6418cbce-9925-4c00-b704-607197f924bf",
-                            "name": "Next JS",
-                            "category": null
-                        }
-                    },
-                    {
-                        "id": "21c90897-182d-41fb-aee5-431428c5a591",
-                        "icon": "",
-                        "color": "#8cff8a",
-                        "skill": {
-                            "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
-                            "name": "Critical Thinking",
-                            "category": null
-                        }
-                    }
-                ]
-            },
-            {
-                "id": "9632f41b-7f0e-4991-a2bd-c04a8fa8a68c",
-                "title": "Full Stack Developer",
-                "companyName": "Stacx24 Pvt. Ltd",
-                "companyWebsite": null,
-                "companyX": null,
-                "companyLinkedin": null,
-                "description": "I created some awesome web and mobile apps with a super duper badass team. Our tech stack was mainly Node.js-based: React Express Next JS React Native Typescript But in our tech stack we also used cloud based flows like AWS Cloud Formations. I also worked on RAG workflows using Python and Ollama.",
-                "startedAt": "2024-06-01T00:00:00.000Z",
-                "endAt": "2025-05-07T00:00:00.000Z",
-                "logoURL": null,
-                "userExperienceSkillsets": []
-            }
-        ],
-        "links": [
-            {
-                "id": "8520e136-4703-4e42-8940-4c490078f5a4",
-                "linkUrl": "example.com",
-                "linkTitle": "Dribbble",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "43287379-cd0c-4c82-9e5a-ea46becbc6a6",
-                "linkUrl": "example.com",
-                "linkTitle": "Instagram",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "614e43dd-5479-4b10-8ade-8a28cce1cfd4",
-                "linkUrl": "example.com",
-                "linkTitle": "LinkedIn",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "8369ece8-a279-4a30-bca4-4ea0772cdede",
-                "linkUrl": "example.com",
-                "linkTitle": "Behance",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "bd270c6b-5053-4693-9dd2-369f696a8628",
-                "linkUrl": "example.com",
-                "linkTitle": "x",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "94de0d45-9bf7-494f-92c0-3f24a9a9f5e4",
-                "linkUrl": "example.com",
-                "linkTitle": "pinterest",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "2f93cd03-aa7a-4cb5-896f-cef8da260469",
-                "linkUrl": "example.com",
-                "linkTitle": "github",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "05da071c-32c8-430b-b02e-3ac4ae2c7177",
-                "linkUrl": "example.com",
-                "linkTitle": "calcom",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "3327369f-a18b-480a-8025-00e9abcd94a9",
-                "linkUrl": "example.com",
-                "linkTitle": "telegram",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "35b59f5a-d2a0-4de9-90d1-9b639123859e",
-                "linkUrl": "example.com",
-                "linkTitle": "YouTube",
-                "integrationsEnabled": true
-            }
-        ],
-        "certificates": [
-            {
-                "id": "0debae75-07d1-4421-af44-aca679475026",
-                "title": "AWS",
-                "description": "Achieved the AWS Certified Solutions Architect – Associate certification, demonstrating expertise in designing scalable, highly available, and cost-efficient cloud solutions on AWS. This certification validates strong knowledge of core AWS services, cloud architecture best practices, and the ability to design secure, reliable applications. It reflects a commitment to continuous learning and professional growth in cloud computing.",
-                "link": "example.com",
-                "filePath": null,
-                "startedAt": "2024-12-31T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": "public/data/placeholder_common.jpg",
-                "location": "Remote",
-                "linkName": "File"
-            },
-            {
-                "id": "3f7bf5ef-f3da-4f8b-877c-51a3ae0ba2db",
-                "title": "HTF 4.0",
-                "description": "The best hackathon's I've ever attended. It was too good to be true!",
-                "link": "example.com",
-                "filePath": null,
-                "startedAt": "2022-01-15T00:00:00.000Z",
-                "endAt": "2022-01-15T00:00:00.000Z",
-                "logoURL": "public/data/placeholder_common.jpg",
-                "location": "Gujrat, India",
-                "linkName": "HTF"
-            }
-        ],
-        "education": [
-            {
-                "id": "c7691659-1ee2-4dfb-9ab3-671ed38c28b4",
-                "eduFrom": "DAV Public School",
-                "startedAt": "2025-03-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": "public/data/placeholder_common.jpg",
-                "eduFromLink": null,
-                "degree": {
-                    "id": "c796662c-e09d-4350-913f-5c8c0e526f64",
-                    "name": "10+2 with Science",
-                    "type": "highschool"
-                }
-            },
-            {
-                "id": "7391b647-0972-4335-98ca-183c5e715dff",
-                "eduFrom": "Chandigarh Group of Colleges, Landran, Mohali",
-                "startedAt": "2021-04-15T00:00:00.000Z",
-                "endAt": "2025-06-15T00:00:00.000Z",
-                "logoURL": "public/data/placeholder_common.jpg",
-                "eduFromLink": "example.com",
-                "degree": {
-                    "id": "681ac483-bdc2-4a2c-a7fc-4f12a02d16ab",
-                    "name": "Bachelor of Technology in Artificial Intelligence and Data Science",
-                    "type": "user_created"
-                }
-            }
-        ],
-        "integrationsEnabled": true
+  {
+    "id": "0f3e349e-baf5-43dd-8ce1-3ea8001dc744",
+    "userName": "dev123",
+    "firstName": "Example First Name",
+    "lastName": "Example Last Name",
+    "email": "example@example.com",
+    "phone": "1234567890",
+    "headerText": "Building Cofounds.",
+    "headerImage": "public/data/placeholder_common.jpg",
+    "profileImage": "public/data/placeholder_common.jpg",
+    "description": "I'm Devasaya Singh, a developer who enjoys diving deep into both code and concepts. Whether it's experimenting with new tech or pondering the \"why\" behind how things work, I thrive in spaces where curiosity leads. What Drives Me \"Reinventing the wheel isn't pointless if you're trying to understand how it's built.\" I value learning by doing, even if it means breaking things in the process. Every bug, crash, or unexpected result is a step closer to understanding. Random Facts I enjoy philosophical conversations as much as debugging sessions. I sometimes build things just because they seem interesting. I'm not afraid to scrap entire projects if I’ve learned something better in the process. Want to Know More? Feel free to explore my projects on GitHub: https://example.com\nI try to keep it updated with whatever I’m working on or experimenting with.",
+    "templateId": "67716bde-307c-42e9-98d3-cc7dcd8deaf6",
+    "country": "India",
+    "state": "Haryana",
+    "city": null,
+    "template": {
+      "name": "template-03"
     },
-    {
-        "id": "9be0fe0b-7cdd-47bb-bc5e-f92cc6ccf659",
-        "userName": "sachit",
-        "firstName": "Sachit",
-        "lastName": "Aggarwal",
-        "email": "example@example.com",
-        "phone": "1234567890",
-        "headerText": "i am the reason u see updates here :p ",
-        "headerImage": "public/data/placeholder_common.jpg",
-        "profileImage": "public/data/placeholder_common.jpg",
-        "description": "I build more than products — I build movements. From growing HackforBloom into a thriving community to running cofounds that turn ideas into reality, I live where community meets code and creativity meets execution. Whether it’s launching a product, scaling a brand, or sparking a movement, my focus is simple: make it happen and make it matter.",
-        "templateId": "e30c8b4e-f7fd-47a4-a05a-13c295d6a88d",
-        "country": null,
-        "state": null,
-        "city": null,
-        "template": {
-            "name": "template-03"
-        },
-        "skillset": [
-            {
-                "id": "6eefb824-14c4-4d68-9427-a58a4b2e8aa2",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "8eda1495-4fb6-4471-8607-0f11cac1de02",
-                    "name": "tailwind",
-                    "category": null
-                }
-            },
-            {
-                "id": "8b2de453-ead8-480d-be93-e989f8bedb1c",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "8b0ed6b8-396b-49c3-8c40-34103c0fb8bd",
-                    "name": "SQL",
-                    "category": null
-                }
-            },
-            {
-                "id": "e9bf3843-3be2-48a9-b2c8-4efcd2c60481",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "f6d1647c-14c0-44af-bc26-c9124aa25842",
-                    "name": "AWS",
-                    "category": null
-                }
-            },
-            {
-                "id": "a889d752-c245-48ce-a9d8-49bf404f5cf0",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
-                    "name": "C++",
-                    "category": null
-                }
-            },
-            {
-                "id": "b25df1f4-a1eb-4e7d-9c4c-90db13bcb456",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
-                    "name": "React",
-                    "category": null
-                }
-            },
-            {
-                "id": "b818f9ef-6212-4b58-8a8b-395ebe39972b",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "0d5a1a8c-fbef-488d-a43f-c794331ee3b8",
-                    "name": "Node.js",
-                    "category": null
-                }
-            },
-            {
-                "id": "3172dee1-580f-4af2-8566-98111d5076cb",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "b799793b-38c9-423d-b913-3b4507e049af",
-                    "name": "express.js",
-                    "category": null
-                }
-            },
-            {
-                "id": "53b0c745-5570-4a4b-bb5d-9a70ee7e8994",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "e1eb669d-f7a6-48a5-ade7-64c1960756cd",
-                    "name": "Docker",
-                    "category": null
-                }
-            },
-            {
-                "id": "1c77628b-5a94-439a-b6b5-bff2cb04927b",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "f362bad3-e723-412d-950e-9f6151e58e89",
-                    "name": "postman",
-                    "category": null
-                }
-            },
-            {
-                "id": "bde9dd45-3c31-449f-902b-988465f532f4",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "03d556a1-41c0-4264-9244-6e0fd481ab19",
-                    "name": "Mongodb",
-                    "category": null
-                }
-            },
-            {
-                "id": "1ca7dea8-35a3-4ca6-be6b-7453d67bc8fc",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
-                    "name": "JavaScript",
-                    "category": null
-                }
-            },
-            {
-                "id": "1db89f61-3a87-4579-a484-9cda512b267b",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "2e533808-131f-4bf3-9b30-a99ccfd72d01",
-                    "name": "Java",
-                    "category": null
-                }
-            },
-            {
-                "id": "e04b5f2d-1a79-41c0-bf35-4c7d3d0e54f3",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "4cf3704d-d4b6-457a-84a0-59c9b69781bf",
-                    "name": "Git",
-                    "category": null
-                }
-            },
-            {
-                "id": "a8c45036-33bb-44c2-84ba-7585402572a2",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "2811c3f5-5ddc-4691-bb9e-f5b081a2779a",
-                    "name": "github",
-                    "category": null
-                }
-            },
-            {
-                "id": "86d12096-bb3e-401d-a703-ee185edb9475",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "80738b26-47ba-4382-af30-13bf13e20cd3",
-                    "name": "bruno",
-                    "category": null
-                }
-            },
-            {
-                "id": "65c0b035-e91f-4e6e-9a01-453dac1d926a",
-                "icon": null,
-                "color": null,
-                "isCoreSkill": false,
-                "skill": {
-                    "id": "8a5a4b7f-6650-4d9f-a4ee-f8307f732040",
-                    "name": "prisma",
-                    "category": null
-                }
-            }
+    "skillset": [
+      {
+        "id": "091a8d19-c1ec-40f2-b915-841928ab8f0f",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "5c2af5c6-edbf-4e60-afd6-cc309bbe772f",
+          "name": "Decision Making",
+          "category": null
+        }
+      },
+      {
+        "id": "37913bba-70a4-4ac0-bc58-35b54888da05",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "1552b848-10f8-4ed9-9c03-a17410aa4b13",
+          "name": "Data Analysis",
+          "category": null
+        }
+      },
+      {
+        "id": "2ecc7385-9ea8-48a1-8d55-a8e10b6d89b6",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "49aeca79-9295-4d25-9985-57c6c1e8c505",
+          "name": "Problem Solving",
+          "category": null
+        }
+      },
+      {
+        "id": "4b950732-6001-4361-9b18-ec264f1b5da6",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "863d82b0-85c5-4507-9efc-83ec5bcf34fd",
+          "name": "SEO Optimization",
+          "category": null
+        }
+      },
+      {
+        "id": "437cb79f-580a-4ed5-bb51-25a4b73cabd8",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "e3faa98f-8e67-4006-8513-7035888696ab",
+          "name": "Cloud Computing",
+          "category": null
+        }
+      },
+      {
+        "id": "1289d538-b448-4189-b7ab-3cbf1ed17482",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "d22fd422-668a-4346-9758-7f4bcd5e57d3",
+          "name": "Productivity",
+          "category": null
+        }
+      },
+      {
+        "id": "03dff647-fd7b-4b94-a449-724d08aac511",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "3b7a9ff3-2b75-4623-90bf-36fd36ae5eb7",
+          "name": "Ollama",
+          "category": null
+        }
+      },
+      {
+        "id": "7a051c34-8845-45fc-86f5-4914fa293c74",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
+          "name": "Critical Thinking",
+          "category": null
+        }
+      },
+      {
+        "id": "d14536be-abbf-4f02-8ffb-b280ec30ac6f",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "3574f1ac-af2e-4cc1-93d2-d751eb1aade2",
+          "name": "Adaptability",
+          "category": null
+        }
+      },
+      {
+        "id": "32d3417a-8369-437e-8cc7-474aa0c8dd39",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "9381a22e-9250-4efb-a614-ec0a8abdbf95",
+          "name": "Teamwork",
+          "category": null
+        }
+      },
+      {
+        "id": "7caa6204-ddb1-4dc5-bd9f-82c29666e25c",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "562d0bcc-84de-4f01-801e-f992b46a3e8b",
+          "name": "Machine Learning",
+          "category": null
+        }
+      },
+      {
+        "id": "201f498e-f09d-4388-83d2-c773e4d44f24",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "91b4c651-9afb-46b1-8d68-b0a743aa1f29",
+          "name": "Negotiation",
+          "category": null
+        }
+      },
+      {
+        "id": "5216e164-587d-4ce8-bbc4-71d8748da6de",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "da9c05aa-22eb-4555-8bac-f6b547a81cab",
+          "name": "Artificial Intelligence",
+          "category": null
+        }
+      },
+      {
+        "id": "163bb7f9-3203-4b49-acbb-d17090e1aace",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "12e2bba0-cae0-4870-82c3-757f475c714d",
+          "name": "Branding & Messaging",
+          "category": null
+        }
+      },
+      {
+        "id": "e0831a12-bd7d-4819-a32d-102c87fed4e1",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "6c55642b-1aaa-4226-8963-82e7df112f40",
+          "name": "Blockchain",
+          "category": null
+        }
+      },
+      {
+        "id": "2d0d919b-f569-4c0a-a58a-6a5772e8437e",
+        "icon": "https://skillicons.dev/icons?i=cpp",
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
+          "name": "C++",
+          "category": null
+        }
+      },
+      {
+        "id": "e91c5b83-edb9-424d-9bc0-2c2484c56b6a",
+        "icon": null,
+        "color": "#053c94",
+        "isCoreSkill": false,
+        "skill": {
+          "id": "6d00af8e-e24d-45eb-9c6d-31eb3430a9f5",
+          "name": "Creativity",
+          "category": null
+        }
+      },
+      {
+        "id": "2c17ae97-44a2-4061-9377-2e76384507fe",
+        "icon": "https://skillicons.dev/icons?i=html",
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "296dfca4-cd6e-4c93-ab4c-c823ba4eee00",
+          "name": "HTML5",
+          "category": null
+        }
+      },
+      {
+        "id": "97d9c73a-e6c6-4949-b17a-fa883ea565cf",
+        "icon": "https://skillicons.dev/icons?i=nextjs",
+        "color": null,
+        "isCoreSkill": true,
+        "skill": {
+          "id": "6418cbce-9925-4c00-b704-607197f924bf",
+          "name": "Next JS",
+          "category": null
+        }
+      },
+      {
+        "id": "235cad52-e35e-446b-a12f-5868032b6c9d",
+        "icon": "https://skillicons.dev/icons?i=aws",
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "f6d1647c-14c0-44af-bc26-c9124aa25842",
+          "name": "AWS",
+          "category": null
+        }
+      },
+      {
+        "id": "19e82267-17a7-465e-b0f5-77e837a90931",
+        "icon": "https://skillicons.dev/icons?i=nodejs",
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "0d5a1a8c-fbef-488d-a43f-c794331ee3b8",
+          "name": "Node.js",
+          "category": null
+        }
+      },
+      {
+        "id": "7de06ad7-f7b2-4480-ab40-8c209745e94a",
+        "icon": "https://skillicons.dev/icons?i=react",
+        "color": null,
+        "isCoreSkill": true,
+        "skill": {
+          "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
+          "name": "React",
+          "category": null
+        }
+      },
+      {
+        "id": "2ac5f521-be50-46f1-a30c-978dfd240892",
+        "icon": null,
+        "color": "#2d3643",
+        "isCoreSkill": false,
+        "skill": {
+          "id": "653fd95f-e237-47bb-8959-53097a02cf1f",
+          "name": "Cybersecurity",
+          "category": null
+        }
+      },
+      {
+        "id": "c29b7dae-0581-4533-bce6-41a9ecd80018",
+        "icon": "https://skillicons.dev/icons?i=javascript",
+        "color": null,
+        "isCoreSkill": true,
+        "skill": {
+          "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
+          "name": "JavaScript",
+          "category": null
+        }
+      },
+      {
+        "id": "4cf259c9-a7a4-4e8a-8ccd-eafc5a797aed",
+        "icon": "https://skillicons.dev/icons?i=py",
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "68232988-e6c5-4398-9f63-a1308872b4ff",
+          "name": "Python",
+          "category": null
+        }
+      },
+      {
+        "id": "27db8050-f131-4b4b-96e7-36aab4c14f24",
+        "icon": null,
+        "color": "#000000",
+        "isCoreSkill": true,
+        "skill": {
+          "id": "01fb3289-3496-41ad-8433-f67234771656",
+          "name": "Active Listening",
+          "category": null
+        }
+      }
+    ],
+    "projects": [
+      {
+        "id": "11836316-a919-4830-a813-581a94bd10d9",
+        "title": "TCE",
+        "description": "Text Editor in C 🚀 A simple, lightweight text editor built from scratch in pure C! Think nano, but much simpler. No external libraries, just standard C functions for handling input, output, and file operations. Features ✅ Real-time typing – Instantly displays characters as you type. ✅ Basic text editing – Supports typing, deleting (Backspace), and saving files. ✅ Save & Exit Shortcuts – CTRL+S → Save text to output.txt. CTRL+Q → Quit the editor. Installation & Setup 1️⃣ Compile the code Make sure you have GCC installed, then run: gcc main.c input.c screen.c file_io.c editor.c -o text_editor.exe 2️⃣ Run the editor text_editor.exe",
+        "link": "example.com",
+        "linkName": null,
+        "startedAt": "2024-03-01T00:00:00.000Z",
+        "endAt": null,
+        "previewImageUrl": null,
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [],
+        "projectSkillset": [],
+        "projectKPI": []
+      },
+      {
+        "id": "db1e3adf-8f93-4504-8e50-054f21653ba7",
+        "title": " ABCD",
+        "description": "This is a short first paragraph about the project. It briefly explains what the user should expect.\n\nHere is the second paragraph, separated by a blank line. It adds a little more context without being too long.\n\nThis third paragraph is intentionally short.\n\nAnd here is a fourth paragraph that appears after two line breaks.\n\n\nThis final paragraph checks whether extra spacing is preserved properly.\n",
+        "link": null,
+        "linkName": null,
+        "startedAt": null,
+        "endAt": null,
+        "previewImageUrl": "public/data/placeholder_common.jpg",
+        "timeline": "3 Months",
+        "role": "FDA",
+        "team": null,
+        "status": "In Progress",
+        "projectLinks": [
+          {
+            "id": "01e9245b-61ef-420a-9f57-f3827c144c78",
+            "linkUrl": "example.com",
+            "linkTitle": "Github"
+          }
         ],
-        "projects": [
-            {
-                "id": "fe9043f4-8777-4330-b2c4-46b527362567",
-                "title": "SafarSuraksha",
-                "description": "A S.I.H project for the safety of tourist across india through our app SafarSuraksha it is a good project",
-                "link": null,
-                "linkName": null,
-                "startedAt": "2025-08-15T00:00:00.000Z",
-                "endAt": null,
-                "previewImageUrl": null,
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [],
-                "projectSkillset": [],
-                "projectKPI": []
-            },
-            {
-                "id": "eb029fcb-6c30-4d9b-8b1f-c515464fd8f8",
-                "title": "Cofounds",
-                "description": "Making India's first portfolio first hiring platform testing this new feat",
-                "link": null,
-                "linkName": null,
-                "startedAt": "2025-04-15T00:00:00.000Z",
-                "endAt": null,
-                "previewImageUrl": null,
-                "timeline": null,
-                "role": null,
-                "team": null,
-                "status": null,
-                "projectLinks": [],
-                "projectSkillset": [],
-                "projectKPI": []
+        "projectSkillset": [
+          {
+            "id": "76433b7d-f1c6-496a-846e-3154e7db7cc4",
+            "icon": "https://skillicons.dev/icons?i=docker",
+            "color": null,
+            "skill": {
+              "id": "e1eb669d-f7a6-48a5-ade7-64c1960756cd",
+              "name": "Docker",
+              "category": null
             }
-        ],
-        "experience": [
-            {
-                "id": "7e2e88fc-f139-4ac3-81b8-a3f810842975",
-                "title": "full stack developer",
-                "companyName": "Cofounds",
-                "companyWebsite": null,
-                "companyX": null,
-                "companyLinkedin": null,
-                "description": null,
-                "startedAt": "2025-04-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": null,
-                "userExperienceSkillsets": []
+          },
+          {
+            "id": "cc8e6276-bf9c-45f3-9177-107c18460d5f",
+            "icon": "https://skillicons.dev/icons?i=react",
+            "color": null,
+            "skill": {
+              "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
+              "name": "React",
+              "category": null
             }
+          }
         ],
-        "links": [
-            {
-                "id": "1156992d-2fdc-4df0-bf98-f04b6539e4ef",
-                "linkUrl": "example.com",
-                "linkTitle": "linkedin",
-                "integrationsEnabled": false
-            },
-            {
-                "id": "0db13592-ab2d-4c33-974b-6c55735a150a",
-                "linkUrl": "example.com",
-                "linkTitle": "youtube",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "99e642ae-23c5-4b09-9a69-22d8123423c2",
-                "linkUrl": "example.com",
-                "linkTitle": "calcom",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "d479e5ad-e670-4355-8e8d-89fd12230d7a",
-                "linkUrl": "example.com",
-                "linkTitle": "github",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "74a0f8c7-6775-4fd4-b265-799d51ed8ad2",
-                "linkUrl": "example.com",
-                "linkTitle": "leetcode",
-                "integrationsEnabled": true
-            },
-            {
-                "id": "ed3763f6-9c31-4b54-b428-8aa05fab8710",
-                "linkUrl": "example.com",
-                "linkTitle": "product_hunt",
-                "integrationsEnabled": true
+        "projectKPI": [
+          {
+            "id": "d7d515b8-0d9c-461d-8ca2-6bbe94ed56dc",
+            "point": "ABCD",
+            "type": "Key Challenges"
+          },
+          {
+            "id": "73f55a26-af28-4f20-b7e1-b355cd321b41",
+            "point": "1234",
+            "type": "Key Learnings"
+          }
+        ]
+      },
+      {
+        "id": "119070fa-ff01-4dc8-92d2-f90114c671bc",
+        "title": "Ask Sales Guru",
+        "description": "A Reddit-style threaded post system. Biggest challenge: handling deeply nested replies. I initially leaned on AI to generate a directed graph model for replies, but it kept messing up. After days of trial and error, I realized the concepts (trees, graphs) are the hard part — not the syntax. That project forced me to finally respect data structures in practice. Another learning: Vite’s SPA defaults don’t work on Vercel unless you add a vercel.json config. That was my crash course in understanding deployment quirks.",
+        "link": "example.com",
+        "linkName": "Webapp",
+        "startedAt": "2025-08-15T00:00:00.000Z",
+        "endAt": "2025-09-15T00:00:00.000Z",
+        "previewImageUrl": "public/data/placeholder_common.jpg",
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [
+          {
+            "id": "7a8786fb-4c74-4bd5-a1a5-f278f9489060",
+            "linkUrl": "example.com",
+            "linkTitle": "Interest"
+          }
+        ],
+        "projectSkillset": [
+          {
+            "id": "b1831e07-4f9f-4766-aec7-3150e8fc4490",
+            "icon": null,
+            "color": null,
+            "skill": {
+              "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
+              "name": "JavaScript",
+              "category": null
             }
-        ],
-        "certificates": [
-            {
-                "id": "04195231-dfd8-4d11-af5b-6f565c3f8a86",
-                "title": "SIH WINNER",
-                "description": "won internal smart india hackathon backed our team in the top 45 teams out of 500+ teams testing this new feat",
-                "link": null,
-                "filePath": null,
-                "startedAt": "2025-09-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": null,
-                "location": null,
-                "linkName": null
+          },
+          {
+            "id": "4ee1f5e9-c9b6-4d1c-b310-ded9fcb7ad6e",
+            "icon": null,
+            "color": null,
+            "skill": {
+              "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
+              "name": "React",
+              "category": null
             }
-        ],
-        "education": [
-            {
-                "id": "3655be91-c5f4-492a-9f51-aca99543bd81",
-                "eduFrom": "Chandigarh group of colleges",
-                "startedAt": "2023-08-15T00:00:00.000Z",
-                "endAt": null,
-                "logoURL": null,
-                "eduFromLink": null,
-                "degree": {
-                    "id": "ff8ca906-4e50-4f91-b555-7af0677618bb",
-                    "name": "Bachelor of Technology in Computer Science",
-                    "type": "user_created"
-                }
+          },
+          {
+            "id": "8a8bf8aa-0276-4675-bb4d-b370ee6f1c44",
+            "icon": null,
+            "color": null,
+            "skill": {
+              "id": "6418cbce-9925-4c00-b704-607197f924bf",
+              "name": "Next JS",
+              "category": null
             }
+          },
+          {
+            "id": "ae49ab2c-e441-4050-a1ce-5791eaf68519",
+            "icon": null,
+            "color": null,
+            "skill": {
+              "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
+              "name": "Critical Thinking",
+              "category": null
+            }
+          },
+          {
+            "id": "215d9b66-cb24-4cff-a673-0db7d76a85bc",
+            "icon": null,
+            "color": null,
+            "skill": {
+              "id": "b4bca835-3312-4c01-9a33-df276e07ca27",
+              "name": "Typescript",
+              "category": null
+            }
+          }
         ],
+        "projectKPI": []
+      },
+      {
+        "id": "c8fd3fa7-8bfd-4452-bb57-d2ba68b79ec1",
+        "title": "Devgruh",
+        "description": "A webapp for user management in a spiritual event.",
+        "link": "example.com",
+        "linkName": null,
+        "startedAt": "2025-06-15T00:00:00.000Z",
+        "endAt": "2025-06-15T00:00:00.000Z",
+        "previewImageUrl": "public/data/placeholder_common.jpg",
+        "timeline": null,
+        "role": "Fullstack Developer",
+        "team": "Solo",
+        "status": "Completed",
+        "projectLinks": [
+          {
+            "id": "6d078830-20c5-4067-b3cc-da59b07908a2",
+            "linkUrl": "example.com",
+            "linkTitle": "Github"
+          }
+        ],
+        "projectSkillset": [
+          {
+            "id": "4f0b7a13-98e6-4c84-ac39-786b74483999",
+            "icon": "https://skillicons.dev/icons?i=js",
+            "color": null,
+            "skill": {
+              "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
+              "name": "JavaScript",
+              "category": null
+            }
+          },
+          {
+            "id": "f6823ef9-ceb3-4428-9b56-a73aff4fcb91",
+            "icon": "https://skillicons.dev/icons?i=nextjs",
+            "color": null,
+            "skill": {
+              "id": "6418cbce-9925-4c00-b704-607197f924bf",
+              "name": "Next JS",
+              "category": null
+            }
+          },
+          {
+            "id": "38cfa9b2-c1c8-4807-9d7f-a84492c0c5f3",
+            "icon": null,
+            "color": "#171717",
+            "skill": {
+              "id": "da9c05aa-22eb-4555-8bac-f6b547a81cab",
+              "name": "Artificial Intelligence",
+              "category": null
+            }
+          },
+          {
+            "id": "63a2fa0b-46b1-4e1a-a165-02a00cd77616",
+            "icon": null,
+            "color": "#3B82F6",
+            "skill": {
+              "id": "189a5e26-2d60-40bf-a5bf-91a6639c53e6",
+              "name": "Communication",
+              "category": null
+            }
+          }
+        ],
+        "projectKPI": [
+          {
+            "id": "bee8374b-230f-4bb5-adfe-f95d394b1ff3",
+            "point": "jbjbjwf",
+            "type": "Key Challenges"
+          },
+          {
+            "id": "df7fb478-6373-4b68-bc37-bcb3772d14f1",
+            "point": "1234",
+            "type": "Key Learnings"
+          },
+          {
+            "id": "cd03cbff-dfd7-44da-9726-5acc972d0005",
+            "point": "vggv",
+            "type": "Key Challenges"
+          }
+        ]
+      },
+      {
+        "id": "98d9ae6e-10f9-44ab-84e3-ad663def66ff",
+        "title": "CPP-Weather",
+        "description": "CPP Weather CLI A C++ console-based application that fetches and displays the current temperature of a city using the OpenWeatherMap API. Features Fetches real-time weather data. Parses JSON responses using the nlohmann/json library. Displays current temperature in Celsius. Allows users to select from a list of cities. Available Cities The following cities are pre-configured in the program: Mumbai Delhi Bangalore Hyderabad Chennai Kolkata Pune Jaipur Ahmedabad Lucknow",
+        "link": "example.com",
+        "linkName": null,
+        "startedAt": "2024-09-01T00:00:00.000Z",
+        "endAt": "2024-12-01T00:00:00.000Z",
+        "previewImageUrl": null,
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [],
+        "projectSkillset": [],
+        "projectKPI": []
+      },
+      {
+        "id": "c999829b-13ae-4165-b499-193e56a32dc3",
+        "title": "Road-Accident-Analysis",
+        "description": "Road Accident Data Analysis A Jupyter Notebook that helps us to see the frequency of road accidents on Indian roads based on different terrains. Dataset link: Road Accidents in India (2014-2017)",
+        "link": "example.com",
+        "linkName": null,
+        "startedAt": "2023-12-30T00:00:00.000Z",
+        "endAt": "2024-01-01T00:00:00.000Z",
+        "previewImageUrl": null,
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [],
+        "projectSkillset": [],
+        "projectKPI": []
+      }
+    ],
+    "experience": [
+      {
+        "id": "6b2cb60b-16cf-4166-aa8b-54490d3ae733",
+        "title": "Fullstack Developer",
+        "companyName": "Devgruh",
+        "companyWebsite": null,
+        "companyX": null,
+        "companyLinkedin": null,
+        "description": "Made an app for registering users for Akhand Hanuman Chalisa Path. Used the user data for better insights and analysis of how it helped over google forms.",
+        "startedAt": "2025-07-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": null,
+        "userExperienceSkillsets": []
+      },
+      {
+        "id": "a27850d8-bef6-479a-b1f6-276bdaa8aeb1",
+        "title": "Fullstack Developer Intern",
+        "companyName": "Pinterest",
+        "companyWebsite": "example.com",
+        "companyX": "",
+        "companyLinkedin": "",
+        "description": "",
+        "startedAt": "2025-01-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": "public/data/placeholder_common.jpg",
+        "userExperienceSkillsets": [
+          {
+            "id": "dd1b1fd2-94cc-4b88-bc6c-71cb97d92254",
+            "icon": "https://skillicons.dev/icons?i=cpp",
+            "color": "",
+            "skill": {
+              "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
+              "name": "C++",
+              "category": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "b5d57ba3-3f6a-4446-9153-a9a06ee70da2",
+        "title": "GTM Strategist",
+        "companyName": "ABC Labs",
+        "companyWebsite": null,
+        "companyX": null,
+        "companyLinkedin": null,
+        "description": null,
+        "startedAt": null,
+        "endAt": null,
+        "logoURL": null,
+        "userExperienceSkillsets": []
+      },
+      {
+        "id": "4233aec4-ce4c-4de9-8815-5d072e1ba20f",
+        "title": "Tech Lead",
+        "companyName": "Cofounds Tech Services Pvt. Ltd",
+        "companyWebsite": "example.com",
+        "companyX": "",
+        "companyLinkedin": "",
+        "description": "This is a short first paragraph about the project. It briefly explains what the user should expect.\n\nHere is the second paragraph, separated by a blank line. It adds a little more context without being too long.\n\nThis third paragraph is intentionally short.\n\nAnd here is a fourth paragraph that appears after two line breaks.\n\n\nThis final paragraph checks whether extra spacing is preserved properly.",
+        "startedAt": "2025-05-01T00:00:00.000Z",
+        "endAt": "2025-10-15T00:00:00.000Z",
+        "logoURL": "public/data/placeholder_common.jpg",
+        "userExperienceSkillsets": [
+          {
+            "id": "e403d00a-9574-4588-aaa4-17a49207b736",
+            "icon": "https://skillicons.dev/icons?i=nextjs",
+            "color": "",
+            "skill": {
+              "id": "6418cbce-9925-4c00-b704-607197f924bf",
+              "name": "Next JS",
+              "category": null
+            }
+          },
+          {
+            "id": "21c90897-182d-41fb-aee5-431428c5a591",
+            "icon": "",
+            "color": "#8cff8a",
+            "skill": {
+              "id": "67e5feab-4152-473f-a718-6839d2c76bc3",
+              "name": "Critical Thinking",
+              "category": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "9632f41b-7f0e-4991-a2bd-c04a8fa8a68c",
+        "title": "Full Stack Developer",
+        "companyName": "Stacx24 Pvt. Ltd",
+        "companyWebsite": null,
+        "companyX": null,
+        "companyLinkedin": null,
+        "description": "I created some awesome web and mobile apps with a super duper badass team. Our tech stack was mainly Node.js-based: React Express Next JS React Native Typescript But in our tech stack we also used cloud based flows like AWS Cloud Formations. I also worked on RAG workflows using Python and Ollama.",
+        "startedAt": "2024-06-01T00:00:00.000Z",
+        "endAt": "2025-05-07T00:00:00.000Z",
+        "logoURL": null,
+        "userExperienceSkillsets": []
+      }
+    ],
+    "links": [
+      {
+        "id": "8520e136-4703-4e42-8940-4c490078f5a4",
+        "linkUrl": "example.com",
+        "linkTitle": "Dribbble",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "43287379-cd0c-4c82-9e5a-ea46becbc6a6",
+        "linkUrl": "example.com",
+        "linkTitle": "Instagram",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "614e43dd-5479-4b10-8ade-8a28cce1cfd4",
+        "linkUrl": "example.com",
+        "linkTitle": "LinkedIn",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "8369ece8-a279-4a30-bca4-4ea0772cdede",
+        "linkUrl": "example.com",
+        "linkTitle": "Behance",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "bd270c6b-5053-4693-9dd2-369f696a8628",
+        "linkUrl": "example.com",
+        "linkTitle": "x",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "94de0d45-9bf7-494f-92c0-3f24a9a9f5e4",
+        "linkUrl": "example.com",
+        "linkTitle": "pinterest",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "2f93cd03-aa7a-4cb5-896f-cef8da260469",
+        "linkUrl": "example.com",
+        "linkTitle": "github",
         "integrationsEnabled": true
-    }
+      },
+      {
+        "id": "05da071c-32c8-430b-b02e-3ac4ae2c7177",
+        "linkUrl": "example.com",
+        "linkTitle": "calcom",
+        "integrationsEnabled": true
+      },
+      {
+        "id": "3327369f-a18b-480a-8025-00e9abcd94a9",
+        "linkUrl": "example.com",
+        "linkTitle": "telegram",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "35b59f5a-d2a0-4de9-90d1-9b639123859e",
+        "linkUrl": "example.com",
+        "linkTitle": "YouTube",
+        "integrationsEnabled": true
+      }
+    ],
+    "certificates": [
+      {
+        "id": "0debae75-07d1-4421-af44-aca679475026",
+        "title": "AWS",
+        "description": "Achieved the AWS Certified Solutions Architect – Associate certification, demonstrating expertise in designing scalable, highly available, and cost-efficient cloud solutions on AWS. This certification validates strong knowledge of core AWS services, cloud architecture best practices, and the ability to design secure, reliable applications. It reflects a commitment to continuous learning and professional growth in cloud computing.",
+        "link": "example.com",
+        "filePath": null,
+        "startedAt": "2024-12-31T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": "public/data/placeholder_common.jpg",
+        "location": "Remote",
+        "linkName": "File"
+      },
+      {
+        "id": "3f7bf5ef-f3da-4f8b-877c-51a3ae0ba2db",
+        "title": "HTF 4.0",
+        "description": "The best hackathon's I've ever attended. It was too good to be true!",
+        "link": "example.com",
+        "filePath": null,
+        "startedAt": "2022-01-15T00:00:00.000Z",
+        "endAt": "2022-01-15T00:00:00.000Z",
+        "logoURL": "public/data/placeholder_common.jpg",
+        "location": "Gujrat, India",
+        "linkName": "HTF"
+      }
+    ],
+    "education": [
+      {
+        "id": "c7691659-1ee2-4dfb-9ab3-671ed38c28b4",
+        "eduFrom": "DAV Public School",
+        "startedAt": "2025-03-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": "public/data/placeholder_common.jpg",
+        "eduFromLink": null,
+        "degree": {
+          "id": "c796662c-e09d-4350-913f-5c8c0e526f64",
+          "name": "10+2 with Science",
+          "type": "highschool"
+        }
+      },
+      {
+        "id": "7391b647-0972-4335-98ca-183c5e715dff",
+        "eduFrom": "Chandigarh Group of Colleges, Landran, Mohali",
+        "startedAt": "2021-04-15T00:00:00.000Z",
+        "endAt": "2025-06-15T00:00:00.000Z",
+        "logoURL": "public/data/placeholder_common.jpg",
+        "eduFromLink": "example.com",
+        "degree": {
+          "id": "681ac483-bdc2-4a2c-a7fc-4f12a02d16ab",
+          "name": "Bachelor of Technology in Artificial Intelligence and Data Science",
+          "type": "user_created"
+        }
+      }
+    ],
+    "integrationsEnabled": true
+  },
+  {
+    "id": "9be0fe0b-7cdd-47bb-bc5e-f92cc6ccf659",
+    "userName": "sachit",
+    "firstName": "Sachit",
+    "lastName": "Aggarwal",
+    "email": "example@example.com",
+    "phone": "1234567890",
+    "headerText": "i am the reason u see updates here :p ",
+    "headerImage": "public/data/placeholder_common.jpg",
+    "profileImage": "public/data/placeholder_common.jpg",
+    "description": "I build more than products — I build movements. From growing HackforBloom into a thriving community to running cofounds that turn ideas into reality, I live where community meets code and creativity meets execution. Whether it’s launching a product, scaling a brand, or sparking a movement, my focus is simple: make it happen and make it matter.",
+    "templateId": "e30c8b4e-f7fd-47a4-a05a-13c295d6a88d",
+    "country": null,
+    "state": null,
+    "city": null,
+    "template": {
+      "name": "template-03"
+    },
+    "skillset": [
+      {
+        "id": "6eefb824-14c4-4d68-9427-a58a4b2e8aa2",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "8eda1495-4fb6-4471-8607-0f11cac1de02",
+          "name": "tailwind",
+          "category": null
+        }
+      },
+      {
+        "id": "8b2de453-ead8-480d-be93-e989f8bedb1c",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "8b0ed6b8-396b-49c3-8c40-34103c0fb8bd",
+          "name": "SQL",
+          "category": null
+        }
+      },
+      {
+        "id": "e9bf3843-3be2-48a9-b2c8-4efcd2c60481",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "f6d1647c-14c0-44af-bc26-c9124aa25842",
+          "name": "AWS",
+          "category": null
+        }
+      },
+      {
+        "id": "a889d752-c245-48ce-a9d8-49bf404f5cf0",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "a72c99aa-7720-4ff6-80ff-63daba1edf18",
+          "name": "C++",
+          "category": null
+        }
+      },
+      {
+        "id": "b25df1f4-a1eb-4e7d-9c4c-90db13bcb456",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "2a516a92-c898-404e-8cf7-91d1ddae5d9f",
+          "name": "React",
+          "category": null
+        }
+      },
+      {
+        "id": "b818f9ef-6212-4b58-8a8b-395ebe39972b",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "0d5a1a8c-fbef-488d-a43f-c794331ee3b8",
+          "name": "Node.js",
+          "category": null
+        }
+      },
+      {
+        "id": "3172dee1-580f-4af2-8566-98111d5076cb",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "b799793b-38c9-423d-b913-3b4507e049af",
+          "name": "express.js",
+          "category": null
+        }
+      },
+      {
+        "id": "53b0c745-5570-4a4b-bb5d-9a70ee7e8994",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "e1eb669d-f7a6-48a5-ade7-64c1960756cd",
+          "name": "Docker",
+          "category": null
+        }
+      },
+      {
+        "id": "1c77628b-5a94-439a-b6b5-bff2cb04927b",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "f362bad3-e723-412d-950e-9f6151e58e89",
+          "name": "postman",
+          "category": null
+        }
+      },
+      {
+        "id": "bde9dd45-3c31-449f-902b-988465f532f4",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "03d556a1-41c0-4264-9244-6e0fd481ab19",
+          "name": "Mongodb",
+          "category": null
+        }
+      },
+      {
+        "id": "1ca7dea8-35a3-4ca6-be6b-7453d67bc8fc",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "0bab9d40-b8bb-49ca-876e-fcc0c9b7b06d",
+          "name": "JavaScript",
+          "category": null
+        }
+      },
+      {
+        "id": "1db89f61-3a87-4579-a484-9cda512b267b",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "2e533808-131f-4bf3-9b30-a99ccfd72d01",
+          "name": "Java",
+          "category": null
+        }
+      },
+      {
+        "id": "e04b5f2d-1a79-41c0-bf35-4c7d3d0e54f3",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "4cf3704d-d4b6-457a-84a0-59c9b69781bf",
+          "name": "Git",
+          "category": null
+        }
+      },
+      {
+        "id": "a8c45036-33bb-44c2-84ba-7585402572a2",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "2811c3f5-5ddc-4691-bb9e-f5b081a2779a",
+          "name": "github",
+          "category": null
+        }
+      },
+      {
+        "id": "86d12096-bb3e-401d-a703-ee185edb9475",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "80738b26-47ba-4382-af30-13bf13e20cd3",
+          "name": "bruno",
+          "category": null
+        }
+      },
+      {
+        "id": "65c0b035-e91f-4e6e-9a01-453dac1d926a",
+        "icon": null,
+        "color": null,
+        "isCoreSkill": false,
+        "skill": {
+          "id": "8a5a4b7f-6650-4d9f-a4ee-f8307f732040",
+          "name": "prisma",
+          "category": null
+        }
+      }
+    ],
+    "projects": [
+      {
+        "id": "fe9043f4-8777-4330-b2c4-46b527362567",
+        "title": "SafarSuraksha",
+        "description": "A S.I.H project for the safety of tourist across india through our app SafarSuraksha it is a good project",
+        "link": null,
+        "linkName": null,
+        "startedAt": "2025-08-15T00:00:00.000Z",
+        "endAt": null,
+        "previewImageUrl": null,
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [],
+        "projectSkillset": [],
+        "projectKPI": []
+      },
+      {
+        "id": "eb029fcb-6c30-4d9b-8b1f-c515464fd8f8",
+        "title": "Cofounds",
+        "description": "Making India's first portfolio first hiring platform testing this new feat",
+        "link": null,
+        "linkName": null,
+        "startedAt": "2025-04-15T00:00:00.000Z",
+        "endAt": null,
+        "previewImageUrl": null,
+        "timeline": null,
+        "role": null,
+        "team": null,
+        "status": null,
+        "projectLinks": [],
+        "projectSkillset": [],
+        "projectKPI": []
+      }
+    ],
+    "experience": [
+      {
+        "id": "7e2e88fc-f139-4ac3-81b8-a3f810842975",
+        "title": "full stack developer",
+        "companyName": "Cofounds",
+        "companyWebsite": null,
+        "companyX": null,
+        "companyLinkedin": null,
+        "description": null,
+        "startedAt": "2025-04-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": null,
+        "userExperienceSkillsets": []
+      }
+    ],
+    "links": [
+      {
+        "id": "1156992d-2fdc-4df0-bf98-f04b6539e4ef",
+        "linkUrl": "example.com",
+        "linkTitle": "linkedin",
+        "integrationsEnabled": false
+      },
+      {
+        "id": "0db13592-ab2d-4c33-974b-6c55735a150a",
+        "linkUrl": "example.com",
+        "linkTitle": "youtube",
+        "integrationsEnabled": true
+      },
+      {
+        "id": "99e642ae-23c5-4b09-9a69-22d8123423c2",
+        "linkUrl": "example.com",
+        "linkTitle": "calcom",
+        "integrationsEnabled": true
+      },
+      {
+        "id": "d479e5ad-e670-4355-8e8d-89fd12230d7a",
+        "linkUrl": "example.com",
+        "linkTitle": "github",
+        "integrationsEnabled": true
+      },
+      {
+        "id": "74a0f8c7-6775-4fd4-b265-799d51ed8ad2",
+        "linkUrl": "example.com",
+        "linkTitle": "leetcode",
+        "integrationsEnabled": true
+      },
+      {
+        "id": "ed3763f6-9c31-4b54-b428-8aa05fab8710",
+        "linkUrl": "example.com",
+        "linkTitle": "product_hunt",
+        "integrationsEnabled": true
+      }
+    ],
+    "certificates": [
+      {
+        "id": "04195231-dfd8-4d11-af5b-6f565c3f8a86",
+        "title": "SIH WINNER",
+        "description": "won internal smart india hackathon backed our team in the top 45 teams out of 500+ teams testing this new feat",
+        "link": null,
+        "filePath": null,
+        "startedAt": "2025-09-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": null,
+        "location": null,
+        "linkName": null
+      }
+    ],
+    "education": [
+      {
+        "id": "3655be91-c5f4-492a-9f51-aca99543bd81",
+        "eduFrom": "Chandigarh group of colleges",
+        "startedAt": "2023-08-15T00:00:00.000Z",
+        "endAt": null,
+        "logoURL": null,
+        "eduFromLink": null,
+        "degree": {
+          "id": "ff8ca906-4e50-4f91-b555-7af0677618bb",
+          "name": "Bachelor of Technology in Computer Science",
+          "type": "user_created"
+        }
+      }
+    ],
+    "integrationsEnabled": true
+  }
 ]

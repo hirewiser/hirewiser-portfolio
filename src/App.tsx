@@ -28,9 +28,7 @@ function App() {
   }, [data?.userName]);
 
   if (isLoading) {
-    return (
-      <></>
-    );
+    return <></>;
   }
 
   return (

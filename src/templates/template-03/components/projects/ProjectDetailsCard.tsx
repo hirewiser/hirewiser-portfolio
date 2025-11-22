@@ -58,13 +58,13 @@ export function ProjectDetailsCard({
           project.team ||
           project.role ||
           project.status) && (
-            <ProjectMeta
-              timeline={project.timeline ?? ""}
-              team={project.team ?? ""}
-              role={project.role ?? ""}
-              status={project.status}
-            />
-          )}
+          <ProjectMeta
+            timeline={project.timeline ?? ""}
+            team={project.team ?? ""}
+            role={project.role ?? ""}
+            status={project.status}
+          />
+        )}
 
         {/* Links Section */}
         <ProjectLinks

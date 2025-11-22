@@ -15,7 +15,6 @@ type ContactSectionProps = {
   preText?: string;
   linkText?: string;
   calLink?: string;
-  isCalcomEnabled?: boolean;
 };
 
 export default function ContactSection({
@@ -23,7 +22,6 @@ export default function ContactSection({
   name,
   initials,
   calLink,
-  isCalcomEnabled = false,
   preText,
   linkText,
 }: ContactSectionProps) {
@@ -62,7 +60,7 @@ export default function ContactSection({
 
             {/* Button */}
             <div className="flex justify-center">
-              {isCalcomEnabled && calUsername ? (
+              {calUsername ? (
                 <Dialog>
                   <DialogTrigger asChild>
                     <button

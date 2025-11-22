@@ -1,15 +1,15 @@
 import { AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import type { Experience as ExperienceType } from "@/types/portfolio.types";
 import { SkillBadge } from "../SkillBadge";
+// 👇 IMPORT HTML PARSER
+import parse from "html-react-parser";
 
 const formatDate = (dateString: string): string => {
   try {
@@ -146,6 +146,7 @@ export default function ExperienceCard({
                     key={`${skillset.skill.id}-${i}`}
                     name={skillset.skill.name}
                     icon={skillset.icon}
+                    color={skillset.color}
                   />
                 ))}
               </div>
@@ -154,14 +155,15 @@ export default function ExperienceCard({
             )}
           </div>
 
-          {/* DESCRIPTION (Always Rendered With Fallback) */}
+          {/* DESCRIPTION (Using HTML Parser) */}
           <div className="mt-3">
             <h4 className="text-md mb-2 font-semibold">Description</h4>
 
             {experience.description ? (
-              <p className="text-secondary whitespace-pre-line">
-                {experience.description}
-              </p>
+              <div className="text-secondary typography">
+                {/* Use the parse function to safely render the HTML content */}
+                {parse(experience.description)}
+              </div>
             ) : (
               <p className="text-sm text-gray-500 italic">
                 No description provided.
