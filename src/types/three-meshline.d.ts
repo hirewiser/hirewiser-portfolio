@@ -1,18 +1,10 @@
-import * as THREE from "three";
-import { ReactThreeFiber } from "@react-three/fiber";
+import { Object3DNode, MaterialNode } from "@react-three/fiber";
+import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
-declare global {
-  namespace JSX {
-    type IntrinsicElements = {
-      meshLineGeometry: any;
-      meshLineMaterial: any;
-    };
+declare module "@react-three/fiber" {
+  interface ThreeElements {
+    meshLineGeometry: Object3DNode<MeshLineGeometry, typeof MeshLineGeometry>;
+    meshLineMaterial: MaterialNode<MeshLineMaterial, typeof MeshLineMaterial>;
   }
 }
 
-declare module "@react-three/fiber" {
-  type ThreeElements = {
-    meshLineGeometry: any;
-    meshLineMaterial: any;
-  };
-}
