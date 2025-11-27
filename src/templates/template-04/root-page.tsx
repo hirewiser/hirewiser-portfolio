@@ -45,7 +45,7 @@ function RootPage04() {
 
           <div className="px-[60px]">
             {/* Header - Full Width */}
-            <header className="relative pt-8">
+            <header className="relative pt-8 pr-2">
               <Header portfolioData={portfolioData} />
             </header>
 
@@ -118,9 +118,8 @@ function RootPage04() {
               <div className="w-full max-w-3xl">
                 <ContactSection
                   profileImage={portfolioData.profileImage || undefined}
-                  name={`${portfolioData.firstName} ${
-                    portfolioData.lastName || ""
-                  }`}
+                  name={`${portfolioData.firstName} ${portfolioData.lastName || ""
+                    }`}
                   initials={
                     portfolioData.firstName[0] +
                     (portfolioData.lastName?.[0] || "")

@@ -58,11 +58,11 @@ function ProjectsPage04() {
             <Header portfolioData={portfolioData} />
           </div>
 
-          <div className="max-w-6xl mx-auto  py-10 ml-12">
-            <BackButton 
-              to="/" 
-              className="mb-6 px-4 py-2 rounded-lg backdrop-blur-xl bg-white/10 hover:bg-white/20 border border-white/10 shadow-lg transition-all duration-300" 
-              label="Back to Home" 
+          <div className="max-w-6xl mx-auto py-10">
+            <BackButton
+              to="/"
+              className="mb-6 px-4 py-2 rounded-lg backdrop-blur-xl bg-white/10 hover:bg-white/20 border border-white/10 shadow-lg transition-all duration-300"
+              label="Back to Home"
             />
             <h1 className="text-4xl font-bold text-[var(--foreground)] mb-2">
               All Projects
