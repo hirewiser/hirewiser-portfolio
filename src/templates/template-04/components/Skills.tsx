@@ -7,11 +7,10 @@ type SkillButtonProps = {
   icon: string | null;
 };
 
-const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => {
-  return (
-    <button
-      type="button"
-      className={`
+const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => (
+  <button
+    type="button"
+    className={`
         group inline-flex items-center bg-black/5 dark:bg-white/15 
         border border-dashed dark:border-white/30 border-black/20 
         py-1 px-2 rounded-md 
@@ -19,34 +18,23 @@ const SkillButton: React.FC<SkillButtonProps> = ({ name, icon }) => {
         text-black dark:text-white cursor-pointer transition-all
         hover:scale-[1.03]
       `}
-    >
-      {icon && (
-        <div className="w-5 h-5 flex items-center justify-center">
-          <div
-            onError={(e) => {
-              // Fallback to text if image fails to load
-              const img = e.currentTarget.querySelector("img");
-              if (img) {
-                img.style.display = "none";
-              }
-            }}
-          >
-            <img
-              src={icon}
-              alt={`${name} icon`}
-              width={15}
-              height={15}
-              className="mb-0.5 object-contain"
-            />
-          </div>
-        </div>
-      )}
-      <span className="text-xs font-bold text-black dark:text-white transition-colors">
-        {name}
-      </span>
-    </button>
-  );
-};
+  >
+    {icon && (
+      <div className="w-5 h-5 flex items-center justify-center">
+        <img
+          src={icon}
+          alt={`${name} icon`}
+          width={15}
+          height={15}
+          className="mb-0.5 object-contain"
+        />
+      </div>
+    )}
+    <span className="text-xs font-bold text-black dark:text-white transition-colors">
+      {name}
+    </span>
+  </button>
+);
 
 type SkillsProps = {
   skillset: SkillsetItem[];
