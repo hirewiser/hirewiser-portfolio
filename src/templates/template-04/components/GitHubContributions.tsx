@@ -7,43 +7,55 @@ type GitHubContributionsProps = {
   isGitHubEnabled?: boolean;
 };
 
+function cleanAndValidateUsername(githubUsername: string | null): {
+  cleanUsername: string;
+  isValidUsername: boolean;
+} {
+  let cleanedName = githubUsername ? githubUsername.trim() : "";
+  let isValid = Boolean(cleanedName);
+
+  if (isValid) {
+    try {
+      if (cleanedName.includes(".") || cleanedName.includes("/")) {
+        const url = cleanedName.startsWith("http")
+          ? cleanedName
+          : `https://${cleanedName}`;
+
+        const parsed = new URL(url);
+
+        const pathSegments = parsed.pathname.split("/").filter(Boolean);
+        
+        cleanedName =
+          pathSegments[0] ||
+          parsed.hostname.replace("www.", "").replace("github.com", "");
+      }
+    } catch (_e) {
+      isValid = false;
+      cleanedName = "";
+    }
+  }
+
+
+  isValid = isValid && Boolean(cleanedName);
+
+  return { cleanUsername: cleanedName, isValidUsername: isValid };
+}
+
 export default function GitHubContributions({
   githubUsername,
   isIntegrationEnabled = true,
   isGitHubEnabled = true,
 }: GitHubContributionsProps) {
   const { theme } = useTheme();
-  const isEnabled =
-    isIntegrationEnabled && isGitHubEnabled && Boolean(githubUsername);
-
-  // Determine color scheme based on theme
-  const colorScheme = theme === "dark" ? "dark" : "light";
+  const { cleanUsername, isValidUsername } =
+    cleanAndValidateUsername(githubUsername);
+  const isEnabled = isIntegrationEnabled && isGitHubEnabled && isValidUsername;
 
   if (!isEnabled) {
     return null;
   }
 
-  // Defensive: Extract username if a URL is passed
-  const cleanUsername = (() => {
-    if (!githubUsername) {
-      return "";
-    }
-    try {
-      if (
-        githubUsername.includes("http") ||
-        githubUsername.includes("github.com")
-      ) {
-        const url = githubUsername.startsWith("http")
-          ? githubUsername
-          : `https://${githubUsername}`;
-        const parsed = new URL(url);
-        return parsed.pathname.split("/").filter(Boolean)[0] || githubUsername;
-      }
-    } catch (e) {
-      // ignore error
-    }
-    return githubUsername;
-  })();
+  const colorScheme = theme === "dark" ? "dark" : "light";
 
   return (
     <div className="mb-38">
@@ -74,9 +86,10 @@ export default function GitHubContributions({
         <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-6 flex justify-center">
           <div className="w-full flex justify-center">
             <div className="w-full">
+              {/* Added a check here to ensure cleanUsername is not empty before rendering */}
               <div className={theme === "dark" ? "dark" : ""}>
                 <GitHubCalendar
-                  username={cleanUsername ?? ""}
+                  username={cleanUsername}
                   colorScheme={colorScheme}
                   blockSize={9}
                   blockMargin={3}
@@ -86,14 +99,14 @@ export default function GitHubContributions({
                   hideMonthLabels={false}
                   theme={{
                     light: [
-                      "#ebedf0", // Light gray for empty blocks in light mode
+                      "#ebedf0",
                       "#9be9a8",
                       "#40c463",
                       "#30a14e",
                       "#216e39",
                     ],
                     dark: [
-                      "#1a1a1a", // Dark for empty blocks in dark mode
+                      "#1a1a1a",
                       "#0e4429",
                       "#006d32",
                       "#26a641",

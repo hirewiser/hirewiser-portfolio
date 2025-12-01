@@ -1,4 +1,5 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 
 type ProjectLink = {
   id: string;
@@ -35,8 +36,8 @@ export function ProjectLinks({ projectLinks }: ProjectLinksProps) {
   return (
     <div className="space-y-6 max-w-fit">
       <div className="flex items-center gap-2">
-        <div className="w-1 h-6 bg-[var(--link)] rounded-full" />
-        <h3 className="text-xl font-bold text-[var(--foreground)]">
+        <div className="w-1 h-6 bg-(--link) rounded-full" />
+        <h3 className="text-xl font-bold text-foreground">
           Project Links
         </h3>
       </div>
@@ -47,21 +48,21 @@ export function ProjectLinks({ projectLinks }: ProjectLinksProps) {
             href={liveLink.linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 p-4 bg-gradient-to-r from-[var(--muted)] to-transparent border border-[var(--border)] rounded-xl hover:border-[var(--link)] hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="group flex items-center gap-3 p-4 bg-linear-to-r from-muted to-transparent border border-border rounded-xl hover:border-(--link) hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center w-10 h-10 bg-[var(--link)]/10 rounded-lg group-hover:bg-[var(--link)]/20 transition-colors">
-              <ExternalLink className="w-5 h-5 text-[var(--link)]" />
+            <div className="flex items-center justify-center w-10 h-10 bg-(--link)/10 rounded-lg group-hover:bg-(--link)/20 transition-colors">
+              <ExternalLink className="w-5 h-5 text-(--link)" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="font-semibold text-[var(--foreground)] group-hover:text-[var(--link)] transition-colors truncate">
+              <div className="font-semibold text-foreground group-hover:text-(--link) transition-colors truncate">
                 {liveLink.linkTitle}
               </div>
-              <div className="text-sm text-[var(--muted-foreground)] truncate">
+              <div className="text-sm text-muted-foreground truncate">
                 {liveLink.linkUrl}
               </div>
             </div>
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--muted)] group-hover:bg-[var(--link)]/10 transition-colors">
-              <ExternalLink className="w-4 h-4 text-[var(--muted-foreground)] group-hover:text-[var(--link)] transition-colors" />
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-muted group-hover:bg-(--link)/10 transition-colors">
+              <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-(--link) transition-colors" />
             </div>
           </a>
         )}
@@ -71,21 +72,21 @@ export function ProjectLinks({ projectLinks }: ProjectLinksProps) {
             href={githubLink.linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 p-4 bg-gradient-to-r from-[var(--muted)] to-transparent border border-[var(--border)] rounded-xl hover:border-[var(--link)] hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="group flex items-center gap-3 p-4 bg-linear-to-r from-muted to-transparent border border-border rounded-xl hover:border-(--link) hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center w-10 h-10 bg-[var(--link)]/10 rounded-lg group-hover:bg-[var(--link)]/20 transition-colors">
-              <Github className="w-5 h-5 text-[var(--link)]" />
+            <div className="flex items-center justify-center w-10 h-10 bg-(--link)/10 rounded-lg group-hover:bg-(--link)/20 transition-colors">
+              <FaGithub className="w-5 h-5 text-(--link)" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="font-semibold text-[var(--foreground)] group-hover:text-[var(--link)] transition-colors truncate">
+              <div className="font-semibold text-foreground group-hover:text-(--link) transition-colors truncate">
                 {githubLink.linkTitle}
               </div>
-              <div className="text-sm text-[var(--muted-foreground)] truncate">
+              <div className="text-sm text-muted-foreground truncate">
                 {githubLink.linkUrl}
               </div>
             </div>
-            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--muted)] group-hover:bg-[var(--link)]/10 transition-colors">
-              <Github className="w-4 h-4 text-[var(--muted-foreground)] group-hover:text-[var(--link)] transition-colors" />
+            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-muted group-hover:bg-(--link)/10 transition-colors">
+              <FaGithub className="w-4 h-4 text-muted-foreground group-hover:text-(--link) transition-colors" />
             </div>
           </a>
         )}
@@ -96,16 +97,16 @@ export function ProjectLinks({ projectLinks }: ProjectLinksProps) {
             href={link.linkUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-3 p-4 bg-gradient-to-r from-[var(--muted)] to-transparent border border-[var(--border)] rounded-xl hover:border-[var(--link)] hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            className="group flex items-center gap-3 p-4 bg-linear-to-r from-muted to-transparent border border-border rounded-xl hover:border-(--link) hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
           >
-            <div className="flex items-center justify-center w-10 h-10 bg-[var(--link)]/10 rounded-lg group-hover:bg-[var(--link)]/20 transition-colors">
-              <ExternalLink className="w-5 h-5 text-[var(--link)]" />
+            <div className="flex items-center justify-center w-10 h-10 bg-(--link)/10 rounded-lg group-hover:bg-(--link)/20 transition-colors">
+              <ExternalLink className="w-5 h-5 text-(--link)" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="font-semibold text-[var(--foreground)] group-hover:text-[var(--link)] transition-colors truncate">
+              <div className="font-semibold text-foreground group-hover:text-(--link) transition-colors truncate">
                 {link.linkTitle}
               </div>
-              <div className="text-sm text-[var(--muted-foreground)] truncate max-w-[200px] sm:max-w-none">
+              <div className="text-sm text-muted-foreground truncate max-w-[200px] sm:max-w-none">
                 {link.linkUrl}
               </div>
             </div>

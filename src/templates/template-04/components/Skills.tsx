@@ -1,4 +1,3 @@
-"use client";
 import type React from "react";
 import type { SkillsetItem } from "@/types/portfolio.types";
 
@@ -47,16 +46,12 @@ const Skills: React.FC<SkillsProps> = ({ skillset }) => {
 
   return (
     <div className="py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-[var(--foreground)]">
-        skills
-      </h1>
+      <h1 className="text-3xl font-bold mb-6 text-foreground">skills</h1>
       <div className="max-w-2xl">
         {!skillset || skillset.length === 0 ? (
-          <div className="text-center py-12 border border-[var(--border)] rounded-lg bg-[var(--muted)]">
-            <p className="text-[var(--muted-foreground)]">
-              No skills to display
-            </p>
-            <p className="text-xs text-[var(--muted-foreground)] mt-2">
+          <div className="text-center py-12 border border-border rounded-lg bg-muted">
+            <p className="text-muted-foreground">No skills to display</p>
+            <p className="text-xs text-muted-foreground mt-2">
               Add skills to your portfolio
             </p>
           </div>
@@ -65,7 +60,7 @@ const Skills: React.FC<SkillsProps> = ({ skillset }) => {
             {/* Core Skills Section */}
             {coreSkills.length > 0 && (
               <div>
-                <h2 className="text-sm font-medium text-[var(--muted-foreground)] mb-4 uppercase tracking-wider">
+                <h2 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
                   Core Skills
                 </h2>
                 <div className="flex flex-wrap gap-3">
@@ -84,7 +79,7 @@ const Skills: React.FC<SkillsProps> = ({ skillset }) => {
             {otherSkills.length > 0 && (
               <div>
                 {coreSkills.length > 0 && (
-                  <h2 className="text-sm font-medium text-[var(--muted-foreground)] mb-4 uppercase tracking-wider">
+                  <h2 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
                     Other Skills
                   </h2>
                 )}

@@ -17,14 +17,14 @@ export function ProjectTechStack({ technologies }: ProjectTechStackProps) {
 
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-semibold text-[var(--foreground)]">
+      <h3 className="text-lg font-semibold text-foreground">
         Technologies Used
       </h3>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (
           <span
             key={tech.id}
-            className="inline-flex items-center px-3 py-1 bg-[var(--muted)] border border-[var(--border)] rounded-md text-sm text-[var(--foreground)]"
+            className="inline-flex items-center px-3 py-1 bg-muted border border-border rounded-md text-sm text-foreground"
           >
             {tech.skill.name}
           </span>

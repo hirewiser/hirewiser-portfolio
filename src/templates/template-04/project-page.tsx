@@ -43,13 +43,13 @@ function ProjectPage04() {
   if (!projectData) {
     return (
       <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
-        <div className="min-h-screen w-full relative overflow-hidden font-[family-name:var(--font-geist-sans)]">
+        <div className="min-h-screen w-full relative overflow-hidden font-(family-name:--font-geist-sans)">
           <Header portfolioData={portfolioData} />
           <div className="max-w-4xl mx-auto py-20 text-center">
             <p className="text-red-500 font-semibold">Project not found.</p>
             <Link
               to="/projects"
-              className="text-[var(--link)] hover:underline mt-4 inline-block"
+              className="text-(--link) hover:underline mt-4 inline-block"
             >
               Back to Projects
             </Link>
@@ -65,10 +65,10 @@ function ProjectPage04() {
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
-      <div className="min-h-screen w-full bg-[var(--background)] relative overflow-hidden font-[family-name:var(--font-geist-sans)]">
+      <div className="min-h-screen w-full bg-background relative overflow-hidden font-(family-name:--font-geist-sans)">
         {/* Vertical separators with balanced padding */}
-        <div className="absolute left-6 md:left-16 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden" />
-        <div className="absolute right-6 md:right-16 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden" />
+        <div className="absolute left-6 md:left-16 top-0 bottom-0 border-l border-dotted border-border border-opacity-40 h-full overflow-hidden" />
+        <div className="absolute right-6 md:right-16 top-0 bottom-0 border-l border-dotted border-border border-opacity-40 h-full overflow-hidden" />
 
         <div className="px-4 sm:px-[34px] pt-7">
           <div className="px-4 sm:px-8">

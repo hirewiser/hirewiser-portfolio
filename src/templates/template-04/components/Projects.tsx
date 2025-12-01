@@ -1,4 +1,3 @@
-"use client";
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -42,17 +41,17 @@ const ProjectItem: React.FC<ProjectProps> = ({
   return (
     <div className="mb-8">
       <div className="flex items-start">
-        <div className="w-10 h-10 mr-4 flex-shrink-0">
+        <div className="w-10 h-10 mr-4 shrink-0">
           {logo && logo !== "/default.png" ? (
             <img
               src={logo}
               alt={title ? `${title} logo` : "Project logo"}
               width={40}
               height={40}
-              className="w-full h-full rounded-full object-cover border border-[var(--border)]"
+              className="w-full h-full rounded-full object-cover border border-border"
             />
           ) : (
-            <div className="w-full h-full rounded-full border border-[var(--border)] bg-[var(--muted)] flex items-center justify-center text-[var(--foreground)] font-bold text-sm">
+            <div className="w-full h-full rounded-full border border-border bg-muted flex items-center justify-center text-foreground font-bold text-sm">
               {title.charAt(0).toUpperCase()}
             </div>
           )}
@@ -63,7 +62,7 @@ const ProjectItem: React.FC<ProjectProps> = ({
             <button
               type="button"
               onClick={() => navigate(`/projects/${id}`)}
-              className="text-base text-[var(--foreground)] decoration-[1px] underline underline-offset-3 decoration-[var(--muted-foreground)] cursor-pointer group flex items-center bg-transparent border-0 p-0"
+              className="text-base text-foreground decoration-1 underline underline-offset-3 decoration-muted-foreground cursor-pointer group flex items-center bg-transparent border-0 p-0"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -122,7 +121,7 @@ const ProjectItem: React.FC<ProjectProps> = ({
               </div>
             )}
           </span>
-          <p className="text-sm text-[var(--muted-foreground)] mt-1">
+          <p className="text-sm text-muted-foreground mt-1">
             {strippedDescription.length > 85
               ? `${strippedDescription.substring(0, 85)}...`
               : strippedDescription}
@@ -165,9 +164,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   return (
     <div className="py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-[var(--foreground)]">
-        projects
-      </h1>
+      <h1 className="text-3xl font-bold mb-6 text-foreground">projects</h1>
       <div className="max-w-2xl">
         {displayedProjects.map((project) => (
           <ProjectItem
@@ -185,7 +182,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           <button
             type="button"
             onClick={() => navigate("/projects")}
-            className="mt-6 text-[var(--link)] hover:underline text-sm font-medium flex items-center"
+            className="mt-6 text-(--link) hover:underline text-sm font-medium flex items-center"
           >
             view all projects
             <svg

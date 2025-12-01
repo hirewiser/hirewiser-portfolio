@@ -1,15 +1,16 @@
 import type React from "react";
 import ProjectCard from "./ProjectCard";
+import type { Project } from "@/types/portfolio.types";
 
 type ProjectsListProps = {
-  projects: any[];
+  projects: Project[];
 };
 
 const ProjectsList: React.FC<ProjectsListProps> = ({ projects }) => {
   if (!projects || projects.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-[var(--muted-foreground)]">No projects found.</p>
+        <p className="text-muted-foreground">No projects found.</p>
       </div>
     );
   }

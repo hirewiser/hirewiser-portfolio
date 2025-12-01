@@ -76,7 +76,7 @@ function Header({ portfolioData }: HeaderProps) {
         <div className="flex items-center">
           <Link
             to="/"
-            className="mb-6 ml-2 text-base text-[var(--primary)] hover:underline"
+            className="mb-6 ml-2 text-base text-primary hover:underline"
           >
             {portfolioData
               ? `${portfolioData.firstName} ${portfolioData.lastName || ""}`.trim()
@@ -91,7 +91,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("hero")}
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 about
               </button>
@@ -100,7 +100,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("projects")}
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 projects
               </button>
@@ -109,7 +109,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("work")}
-                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 work
               </button>
@@ -122,13 +122,13 @@ function Header({ portfolioData }: HeaderProps) {
             <button
               type="button"
               onClick={handleThemeChange}
-              className="p-2 rounded-md hover:bg-[var(--accent)] transition-colors mb-6"
+              className="p-2 rounded-md hover:bg-accent transition-colors mb-6"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
-                <Moon className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+                <Moon className="h-[18px] w-[18px] text-muted-foreground" />
               ) : (
-                <Sun className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+                <Sun className="h-[18px] w-[18px] text-muted-foreground" />
               )}
             </button>
 
@@ -136,13 +136,13 @@ function Header({ portfolioData }: HeaderProps) {
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md hover:bg-[var(--accent)] transition-colors mb-6"
+              className="p-2 rounded-md hover:bg-accent transition-colors mb-6"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+                <X className="h-[18px] w-[18px] text-muted-foreground" />
               ) : (
-                <Menu className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+                <Menu className="h-[18px] w-[18px] text-muted-foreground" />
               )}
             </button>
           </div>
@@ -151,13 +151,13 @@ function Header({ portfolioData }: HeaderProps) {
           <button
             type="button"
             onClick={handleThemeChange}
-            className="hidden sm:block p-2 rounded-md hover:bg-[var(--accent)] transition-colors mb-5"
+            className="hidden sm:block p-2 rounded-md hover:bg-accent transition-colors mb-5"
             aria-label="Toggle theme"
           >
             {theme === "light" ? (
-              <Moon className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+              <Moon className="h-[18px] w-[18px] text-muted-foreground" />
             ) : (
-              <Sun className="h-[18px] w-[18px] text-[var(--muted-foreground)]" />
+              <Sun className="h-[18px] w-[18px] text-muted-foreground" />
             )}
           </button>
         </div>
@@ -171,7 +171,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("hero")}
-                className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
               >
                 about
               </button>
@@ -180,7 +180,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("projects")}
-                className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
               >
                 projects
               </button>
@@ -189,7 +189,7 @@ function Header({ portfolioData }: HeaderProps) {
               <button
                 type="button"
                 onClick={() => scrollToSection("work")}
-                className="text-lg text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
+                className="text-lg text-muted-foreground hover:text-foreground transition-colors"
               >
                 work
               </button>
@@ -199,7 +199,7 @@ function Header({ portfolioData }: HeaderProps) {
       )}
 
       {/* Full width divider that breaks out of container */}
-      <hr className="border-t border-[var(--border)] relative w-screen left-[50%] right-[50%] -translate-x-[50%]" />
+      <hr className="border-t border-border relative w-screen left-[50%] right-[50%] -translate-x-[50%]" />
     </div>
   );
 }

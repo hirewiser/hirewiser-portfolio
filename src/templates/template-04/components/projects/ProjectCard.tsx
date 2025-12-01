@@ -1,10 +1,11 @@
 import type React from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github } from "lucide-react";
-import type { ProjectSkillset } from "@/types/portfolio.types";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
+import type { ProjectSkillset, Project } from "@/types/portfolio.types";
 
 type ProjectCardProps = {
-  project: any;
+  project: Project;
 };
 
 function stripHtml(html: string | null | undefined): string {
@@ -60,17 +61,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   // Get valid links
   const validLinks = (project.projectLinks || []).filter(
-    (link) => link?.linkUrl && link.linkUrl.trim() !== ""
+    (link: { linkUrl: string; }) => link?.linkUrl && link.linkUrl.trim() !== ""
   );
 
   const liveLink =
-    validLinks.find((link) =>
+    validLinks.find((link: { linkTitle: string; }) =>
       ["website", "live", "demo"].some((w) =>
         link.linkTitle?.toLowerCase().includes(w)
       )
     ) || validLinks[0];
 
-  const githubLink = validLinks.find((link) =>
+  const githubLink = validLinks.find((link: { linkTitle: string; }) =>
     link.linkTitle?.toLowerCase().includes("github")
   );
 
@@ -82,9 +83,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       : strippedDescription || "No description available.";
 
   return (
-    <div className="group overflow-hidden transition-all border border-[var(--border)] rounded-lg shadow-sm hover:shadow-md">
+    <div className="group overflow-hidden transition-all border border-border rounded-lg shadow-sm hover:shadow-md">
       {/* Image Section */}
-      <div className="relative aspect-video overflow-hidden bg-[var(--muted)]">
+      <div className="relative aspect-video overflow-hidden bg-muted">
         {/* Gradient fallback */}
         {(() => {
           const gradients = [
@@ -130,7 +131,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* Title + icons */}
           <div className="flex items-start justify-between gap-4">
             <Link to={`/projects/${project.id}`}>
-              <h3 className="text-lg font-semibold leading-tight hover:text-[var(--link)] cursor-pointer transition-colors text-[var(--foreground)]">
+              <h3 className="text-lg font-semibold leading-tight hover:text-(--link) cursor-pointer transition-colors text-foreground">
                 {project.title}
               </h3>
             </Link>
@@ -141,7 +142,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   href={liveLink.linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--muted-foreground)] hover:text-[var(--link)] transition-colors"
+                  className="text-muted-foreground hover:text-(--link) transition-colors"
                   aria-label="View live project"
                 >
                   <ExternalLink className="w-4 h-4" />
@@ -153,17 +154,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   href={githubLink.linkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[var(--muted-foreground)] hover:text-[var(--link)] transition-colors"
+                  className="text-muted-foreground hover:text-(--link) transition-colors"
                   aria-label="View GitHub repository"
                 >
-                  <Github className="w-4 h-4" />
+                  <FaGithub className="w-4 h-4" />
                 </a>
               )}
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-sm text-[var(--muted-foreground)] line-clamp-1">
+          <p className="text-sm text-muted-foreground line-clamp-1">
             {truncatedDesc}
           </p>
 
@@ -174,7 +175,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {skills.slice(0, 2).map((skillset: ProjectSkillset) => (
                   <span
                     key={skillset.id}
-                    className="inline-flex items-center text-xs bg-[var(--muted)] border border-[var(--border)] py-1 px-2 rounded-md text-[var(--foreground)]"
+                    className="inline-flex items-center text-xs bg-muted border border-border py-1 px-2 rounded-md text-foreground"
                   >
                     {skillset.skill.name}
                   </span>
@@ -182,7 +183,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 {skills.length > 2 && (
                   <button
                     type="button"
-                    className="group inline-flex items-center text-xs bg-[var(--muted)] border border-dashed border-[var(--border)] py-1 px-2 rounded-md text-[var(--foreground)]"
+                    className="group inline-flex items-center text-xs bg-muted border border-dashed border-border py-1 px-2 rounded-md text-foreground"
                   >
                     +{skills.length - 2} more
                   </button>
@@ -190,7 +191,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </div>
             </div>
           ) : (
-            <div className="text-xs py-2 text-[var(--muted-foreground)] italic">
+            <div className="text-xs py-2 text-muted-foreground italic">
               No skills listed
             </div>
           )}
@@ -199,7 +200,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="pt-2">
             <Link
               to={`/projects/${project.id}`}
-              className="inline-flex items-center gap-1 text-xs text-[var(--link)] hover:underline font-medium"
+              className="inline-flex items-center gap-1 text-xs text-(--link) hover:underline font-medium"
             >
               View Details
               <ExternalLink className="w-3 h-3" />
@@ -222,7 +223,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
         {/* Date */}
         {project.startedAt && (
-          <span className="text-xs text-[var(--muted-foreground)]">
+          <span className="text-xs text-muted-foreground">
             {new Date(project.startedAt).getFullYear()}
           </span>
         )}

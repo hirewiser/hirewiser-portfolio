@@ -79,7 +79,7 @@ export function ProjectDetailsCard({ project }: ProjectDetailsCardProps) {
         {/* Project Header */}
         <div className="space-y-4">
           {project.previewImageUrl && (
-            <div className="rounded-xl overflow-hidden border border-[var(--border)]">
+            <div className="rounded-xl overflow-hidden border border-border">
               <img
                 src={project.previewImageUrl}
                 alt={project.title}
@@ -91,10 +91,10 @@ export function ProjectDetailsCard({ project }: ProjectDetailsCardProps) {
           )}
 
           <div className="space-y-2">
-            <h1 className="text-4xl font-bold text-[var(--foreground)]">
+            <h1 className="text-4xl font-bold text-foreground">
               {project.title}
             </h1>
-            <div className="flex items-center gap-4 text-[var(--muted-foreground)]">
+            <div className="flex items-center gap-4 text-muted-foreground">
               {project.status && (
                 <span className="font-medium">{project.status}</span>
               )}

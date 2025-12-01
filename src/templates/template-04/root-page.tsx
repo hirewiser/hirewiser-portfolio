@@ -40,9 +40,9 @@ function RootPage04() {
         {/* Main content area */}
         <div className="relative">
           {/* Side separators - full height */}
-          <div className="fixed left-0 top-0 bottom-0 w-4 sm:w-[60px] border-r border-dotted border-[var(--border)] border-opacity-40 h-screen pointer-events-none" />
+          <div className="fixed left-0 top-0 bottom-0 w-4 sm:w-[60px] border-r border-dotted border-border border-opacity-40 h-screen pointer-events-none" />
 
-          <div className="fixed right-0 top-0 bottom-0 w-4 sm:w-[60px] border-l border-dotted border-[var(--border)] border-opacity-40 h-screen pointer-events-none" />
+          <div className="fixed right-0 top-0 bottom-0 w-4 sm:w-[60px] border-l border-dotted border-border border-opacity-40 h-screen pointer-events-none" />
 
           <div className="px-4 sm:px-[60px]">
             {/* Header - Full Width */}
@@ -52,7 +52,7 @@ function RootPage04() {
 
             <div className="relative flex">
               {/* Left Column - Scrollable Content */}
-              <div className="w-full lg:w-1/2 lg:pr-12 lg:border-r border-dashed border-[var(--border)] border-opacity-40 min-h-screen pb-20 mb-10">
+              <div className="w-full lg:w-1/2 lg:pr-12 lg:border-r border-dashed border-border border-opacity-40 min-h-screen pb-20 mb-10">
                 {/* Hero section */}
                 <div className="hero-section relative mb-12" id="hero">
                   <Hero portfolioData={portfolioData} />
@@ -60,7 +60,7 @@ function RootPage04() {
 
                 {/* Full width separator */}
                 <div
-                  className="absolute left-0 right-0 w-screen border-t border-[var(--border)] my-8 -mt-10"
+                  className="absolute left-0 right-0 w-screen border-t border-border my-8 -mt-10"
                   style={{
                     marginLeft: "calc(-50vw + 50%)",
                     marginRight: "calc(-50vw + 50%)",
@@ -77,7 +77,7 @@ function RootPage04() {
 
                 {/* Full width separator */}
                 <div
-                  className="absolute left-0 right-0 w-screen border-t border-[var(--border)] my-8 -mt-10"
+                  className="absolute left-0 right-0 w-screen border-t border-border my-8 -mt-10"
                   style={{
                     marginLeft: "calc(-50vw + 50%)",
                     marginRight: "calc(-50vw + 50%)",
@@ -91,7 +91,7 @@ function RootPage04() {
 
                 {/* Full width separator */}
                 <div
-                  className="absolute left-0 right-0 w-screen border-t border-[var(--border)] my-8 -mt-10"
+                  className="absolute left-0 right-0 w-screen border-t border-border my-8 -mt-10"
                   style={{
                     marginLeft: "calc(-50vw + 50%)",
                     marginRight: "calc(-50vw + 50%)",
@@ -135,7 +135,7 @@ function RootPage04() {
 
             {/* Full width separator with vertical line */}
             <div
-              className="absolute left-0 right-0 w-screen border-t border-[var(--border)] my-8 -mt-10"
+              className="absolute left-0 right-0 w-screen border-t border-border my-8 -mt-10"
               style={{
                 marginLeft: "calc(-50vw + 50%)",
                 marginRight: "calc(-50vw + 50%)",

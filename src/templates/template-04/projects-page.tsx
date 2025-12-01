@@ -21,10 +21,10 @@ function ProjectsPage04() {
   if (error) {
     return (
       <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
-        <div className="min-h-screen w-full bg-[var(--background)] relative overflow-hidden font-[family-name:var(--font-geist-sans)]">
+        <div className="min-h-screen w-full bg-background relative overflow-hidden font-(family-name:--font-geist-sans)">
           <Header portfolioData={portfolioData} />
           <div className="max-w-4xl mx-auto py-20 text-center">
-            <p className="text-[var(--muted-foreground)]">
+            <p className="text-muted-foreground">
               An error occurred while fetching projects.
             </p>
           </div>
@@ -36,10 +36,10 @@ function ProjectsPage04() {
   if (!projectsData || projectsData.length === 0) {
     return (
       <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
-        <div className="min-h-screen w-full bg-[var(--background)] relative overflow-hidden font-[family-name:var(--font-geist-sans)]">
+        <div className="min-h-screen w-full bg-background relative overflow-hidden font-(family-name:--font-geist-sans)">
           <Header portfolioData={portfolioData} />
           <div className="max-w-4xl mx-auto py-20 text-center">
-            <p className="text-[var(--muted-foreground)]">No projects found.</p>
+            <p className="text-muted-foreground">No projects found.</p>
           </div>
         </div>
       </ThemeProvider>
@@ -48,10 +48,10 @@ function ProjectsPage04() {
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
-      <div className="min-h-screen w-full bg-[var(--background)] relative overflow-hidden font-[family-name:var(--font-geist-sans)]">
+      <div className="min-h-screen w-full bg-background relative overflow-hidden font-(family-name:--font-geist-sans)">
         {/* Vertical separators with balanced padding */}
-        <div className="absolute left-6 md:left-16 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden" />
-        <div className="absolute right-6 md:right-16 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden" />
+        <div className="absolute left-6 md:left-16 top-0 bottom-0 border-l border-dotted border-border border-opacity-40 h-full overflow-hidden" />
+        <div className="absolute right-6 md:right-16 top-0 bottom-0 border-l border-dotted border-border border-opacity-40 h-full overflow-hidden" />
 
         <div className="px-[34px] pt-7">
           <div className="px-8 mr-2">
@@ -70,7 +70,7 @@ function ProjectsPage04() {
               <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-center sm:text-left">
                 All Projects
               </h1>
-              <p className="text-[var(--muted-foreground)] mb-8 text-center sm:text-left">
+              <p className="text-muted-foreground mb-8 text-center sm:text-left">
                 Explore my complete portfolio of projects
               </p>
             </div>
