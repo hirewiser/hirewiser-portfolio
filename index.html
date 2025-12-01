@@ -5,10 +5,20 @@
     <link rel="icon" type="image/svg+xml" href="/logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HireWiser Portfolio</title>
-
     <!-- Google Fonts - Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+    "use strict";
+    const apiUrl = "%VITE_COFOUNDS_API_URL%";
+    const subdomain = window.location.host.split(".")[0];
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "fetch";
+    link.crossOrigin = "anonymous";
+    link.href = `${apiUrl}/${subdomain}`;
+    document.head.appendChild(link);
+    </script>
     <link
       href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
