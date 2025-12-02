@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import type { Experience } from "@/types/portfolio.types";
-import { stripHtml } from "@/utils/html_utils";
+import parse from "html-react-parser";
 
 type CompanyLogoProps = {
   src: string | null;
@@ -109,9 +109,10 @@ const WorkItem: React.FC<WorkItemProps> = ({
   startedAt,
   endAt,
 }) => {
-  const timeline = `${formatDate(startedAt)} - ${
-    endAt ? formatDate(endAt) : "Present"
-  }`;
+  const timeline = (startedAt || endAt)
+    ? `${startedAt ? formatDate(startedAt) : ""}${endAt ? ` - ${formatDate(endAt)}` : " - Present"
+    }` : "Present";
+
 
   const renderLogo = () => {
     const logoContent = logoURL ? (
@@ -169,13 +170,13 @@ const WorkItem: React.FC<WorkItemProps> = ({
               <span>{timeline}</span>
             </span>
           </div>
-          <ul className="text-sm text-foreground list-disc pl-4 marker:text-muted-foreground">
+          <ul className="text-sm text-foreground list-disc marker:text-muted-foreground">
             {description ? (
-              <li className="mb-2">{stripHtml(description)}</li>
+              <p className="mb-2 typography">{parse(description)}</p>
             ) : (
-              <li className="mb-2 italic text-muted-foreground">
+              <p className="mb-2 italic text-muted-foreground">
                 No description added
-              </li>
+              </p>
             )}
           </ul>
         </div>
