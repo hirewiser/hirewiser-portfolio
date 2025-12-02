@@ -59,7 +59,7 @@ export default function GitHubContributions({
   return (
     <div className="mb-38">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-foreground">
             GitHub Activity
@@ -81,7 +81,7 @@ export default function GitHubContributions({
       </div>
 
       {/* Card UI */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden mt-2">
         <div className="relative bg-background/50 backdrop-blur-sm rounded-lg border border-dashed dark:border-white/10 border-black/20 p-6 flex justify-center">
           <div className="w-full flex justify-center">
             <div className="w-full">

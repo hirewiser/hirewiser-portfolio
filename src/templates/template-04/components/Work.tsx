@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 import type { Experience } from "@/types/portfolio.types";
+import { stripHtml } from "@/utils/html_utils";
 
 type CompanyLogoProps = {
   src: string | null;
@@ -170,7 +171,7 @@ const WorkItem: React.FC<WorkItemProps> = ({
           </div>
           <ul className="text-sm text-foreground list-disc pl-4 marker:text-muted-foreground">
             {description ? (
-              <li className="mb-2">{description}</li>
+              <li className="mb-2">{stripHtml(description)}</li>
             ) : (
               <li className="mb-2 italic text-muted-foreground">
                 No description added
