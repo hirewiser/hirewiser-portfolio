@@ -109,10 +109,12 @@ const WorkItem: React.FC<WorkItemProps> = ({
   startedAt,
   endAt,
 }) => {
-  const timeline = (startedAt || endAt)
-    ? `${startedAt ? formatDate(startedAt) : ""}${endAt ? ` - ${formatDate(endAt)}` : " - Present"
-    }` : "Present";
-
+  const timeline =
+    startedAt || endAt
+      ? `${startedAt ? formatDate(startedAt) : ""}${
+          endAt ? ` - ${formatDate(endAt)}` : " - Present"
+        }`
+      : "Present";
 
   const renderLogo = () => {
     const logoContent = logoURL ? (

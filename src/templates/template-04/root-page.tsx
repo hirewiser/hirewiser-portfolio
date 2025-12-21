@@ -147,8 +147,9 @@ function RootPage04() {
               <div className="w-full max-w-3xl">
                 <ContactSection
                   profileImage={portfolioData.profileImage || undefined}
-                  name={`${portfolioData.firstName} ${portfolioData.lastName || ""
-                    }`}
+                  name={`${portfolioData.firstName} ${
+                    portfolioData.lastName || ""
+                  }`}
                   initials={
                     portfolioData.firstName[0] +
                     (portfolioData.lastName?.[0] || "")

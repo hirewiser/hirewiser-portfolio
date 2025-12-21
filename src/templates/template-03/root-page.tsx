@@ -6,6 +6,23 @@ import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
 import GitHubContributions from "./components/GitHubContributions";
 import DockNavigation from "./components/DockNavigation";
+import type { GetUserPortfolioV3Response } from "@/types/portfolio.types";
+
+export type SectionKey =
+  | "contact"
+  | "experience"
+  | "projects"
+  | "about"
+  | "github activities";
+
+export type SectionState = {
+  hidden: boolean;
+  order: number;
+};
+
+export type SectionConfig = {
+  [key in SectionKey]: SectionState;
+};
 
 const extractGitHubUsername = (url: string): string | null => {
   if (!url) {
@@ -20,14 +37,14 @@ const extractGitHubUsername = (url: string): string | null => {
   }
 };
 
+type LinkItem = {
+  linkTitle?: string;
+  linkUrl?: string;
+  integrationsEnabled?: boolean;
+};
+
 const extractCalcomLink = (
-  links:
-    | Array<{
-        linkTitle?: string;
-        linkUrl?: string;
-        integrationsEnabled?: boolean;
-      }>
-    | undefined
+  links: LinkItem[] | undefined
 ): { calLink: string; isEnabled: boolean } => {
   const link = links?.find(
     (l) =>
@@ -37,6 +54,109 @@ const extractCalcomLink = (
   );
   const calLink = link?.linkUrl || "";
   return { calLink, isEnabled: Boolean(calLink) };
+};
+
+type SectionRenderProps = {
+  portfolio: GetUserPortfolioV3Response;
+  githubUsername: string | null;
+  calLink: string;
+};
+
+const renderSectionByKey = (
+  key: SectionKey,
+  { portfolio, githubUsername, calLink }: SectionRenderProps
+) => {
+  switch (key) {
+    case "experience":
+      return (
+        <ExperienceSection
+          experiences={portfolio.experience}
+          key="experience"
+        />
+      );
+
+    case "projects":
+      return <ProjectsSection projects={portfolio.projects} key="projects" />;
+
+    case "about":
+      return (
+        <div key="about">
+          <div className="max-w-3xl mx-auto px-5 pb-15">
+            <About
+              name={`${portfolio.firstName} ${portfolio.lastName || ""}`}
+              avatar={portfolio.profileImage ?? ""}
+              about={portfolio.description ?? ""}
+              skillset={
+                portfolio.skillset?.slice().sort((a, b) => {
+                  const aHasUrlIcon = a.icon?.startsWith("https") ? 1 : 0;
+                  const bHasUrlIcon = b.icon?.startsWith("https") ? 1 : 0;
+                  return bHasUrlIcon - aHasUrlIcon;
+                }) ?? []
+              }
+            />
+          </div>
+        </div>
+      );
+
+    case "github activities":
+      if (!(portfolio.integrationsEnabled && githubUsername)) {
+        return null;
+      }
+      return (
+        <div key="github activities">
+          <div className="max-w-3xl mx-auto px-5 pb-15">
+            <GitHubContributions githubUsername={githubUsername} />
+          </div>
+        </div>
+      );
+
+    case "contact":
+      if (!(portfolio.integrationsEnabled && calLink)) {
+        return null;
+      }
+      return (
+        <div key="contact">
+          <div className="max-w-3xl mx-auto px-5 pb-15">
+            <ContactSection
+              profileImage={portfolio.profileImage ?? ""}
+              name={`${portfolio.firstName} ${portfolio.lastName || ""}`}
+              preText="Get in touch to discuss opportunities or collaborations"
+              linkText="Contact Me"
+              calLink={calLink}
+            />
+          </div>
+        </div>
+      );
+
+    default:
+      return null;
+  }
+};
+
+const getOrderedVisibleSectionKeys = (
+  portfolio: GetUserPortfolioV3Response
+): SectionKey[] => {
+  const rawMeta = (
+    portfolio as unknown as {
+      metadeta?: { sectionOrder?: SectionConfig };
+    }
+  ).metadeta;
+
+  const config = rawMeta?.sectionOrder;
+
+  if (!config) {
+    return ["experience", "projects", "about", "github activities", "contact"];
+  }
+
+  const entries = Object.entries(config) as [
+    SectionKey,
+    { hidden: boolean; order: number },
+  ][];
+
+  return entries
+    .filter(([, state]) => !state.hidden)
+    .sort(([, aState], [, bState]) => aState.order - bState.order)
+    .map(([key]) => key);
 };
 
 function RootPage03() {
@@ -52,27 +172,27 @@ function RootPage03() {
   }
 
   const githubUrl =
-    portfolioData?.links?.find(
+    portfolioData.links?.find(
       (l) => l.linkTitle?.toLowerCase() === "github" && l.integrationsEnabled
     )?.linkUrl || "";
   const githubUsername = githubUrl ? extractGitHubUsername(githubUrl) : null;
 
-  const { calLink } = extractCalcomLink(portfolioData?.links);
+  const { calLink } = extractCalcomLink(portfolioData.links);
+  const orderedSectionKeys = getOrderedVisibleSectionKeys(portfolioData);
 
   return (
     <div className="min-h-screen w-full bg-white relative overflow-hidden font-hanken-grotesk">
-      {/* DOCK NAVIGATION */}
       <DockNavigation email={portfolioData.email} />
 
-      {/* CONTENT WRAPPER */}
       <div className="relative z-10">
         <div className="min-h-screen flex flex-col mb-10">
           <div className="flex-1 pb-7 space-y-2">
-            {/* HERO */}
             <div className="bg-white pt-16">
               <div className="max-w-3xl mx-auto px-5">
                 <Hero
-                  name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`}
+                  name={`${portfolioData.firstName} ${
+                    portfolioData.lastName || ""
+                  }`}
                   headerText={portfolioData.headerText ?? ""}
                   email={portfolioData.email}
                   imageSrc={portfolioData.profileImage ?? ""}
@@ -81,57 +201,17 @@ function RootPage03() {
               </div>
             </div>
 
-            {/* EXPERIENCE */}
-            <ExperienceSection experiences={portfolioData.experience} />
-
-            {/* PROJECTS */}
-            <ProjectsSection projects={portfolioData.projects} />
-
-            {/* ABOUT */}
-            <div>
-              <div className="max-w-3xl mx-auto px-5 pb-15">
-                <About
-                  name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`}
-                  avatar={portfolioData.profileImage ?? ""}
-                  about={portfolioData.description ?? ""}
-                  skillset={
-                    portfolioData.skillset
-                      ?.slice() // avoid mutating original array
-                      .sort((a, b) => {
-                        const aHasUrlIcon = a.icon?.startsWith("https") ? 1 : 0;
-                        const bHasUrlIcon = b.icon?.startsWith("https") ? 1 : 0;
-                        return bHasUrlIcon - aHasUrlIcon;
-                      }) ?? []
-                  }
-                />
-              </div>
-            </div>
-            {/* GITHUB CONTRIBUTIONS */}
-            {portfolioData.integrationsEnabled && githubUsername && (
-              <div>
-                <div className="max-w-3xl mx-auto px-5 pb-15">
-                  <GitHubContributions githubUsername={githubUsername} />
-                </div>
-              </div>
-            )}
-
-            {/* CONTACT */}
-            {portfolioData.integrationsEnabled && calLink && (
-              <div>
-                <div className="max-w-3xl mx-auto px-5 pb-15">
-                  <ContactSection
-                    profileImage={portfolioData.profileImage ?? ""}
-                    name={`${portfolioData.firstName} ${portfolioData.lastName || ""}`}
-                    preText="Get in touch to discuss opportunities or collaborations"
-                    linkText="Contact Me"
-                    calLink={calLink}
-                  />
-                </div>
-              </div>
+            {orderedSectionKeys.map((key) =>
+              renderSectionByKey(key, {
+                portfolio: portfolioData,
+                githubUsername,
+                calLink,
+              })
             )}
           </div>
         </div>
       </div>
+
       <div className="pb-25 flex flex-col items-center justify-center">
         <p className="flex gap-1">
           Design & Developed by{" "}

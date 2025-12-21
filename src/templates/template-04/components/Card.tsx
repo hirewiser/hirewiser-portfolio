@@ -65,8 +65,9 @@ export default function Card({ portfolioData }: CardProps) {
         <pointLight position={[-10, -10, 5]} intensity={0.2} />
         <Physics interpolate gravity={[0, -30, 0]} timeStep={1 / 120}>
           <Band
-            name={`${portfolioData.firstName} ${portfolioData.lastName || ""
-              }`.trim()}
+            name={`${portfolioData.firstName} ${
+              portfolioData.lastName || ""
+            }`.trim()}
             title={
               portfolioData.headerText || portfolioData.title || "Professional"
             }

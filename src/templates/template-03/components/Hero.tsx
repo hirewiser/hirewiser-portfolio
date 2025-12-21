@@ -14,8 +14,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import { Code2, Mail, Globe } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SkillBadge } from "./SkillBadge";
+import type { Event } from "../../../types/portfolio.types";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../../../components/ui/tooltip";
 
-// Map of social media platforms to their respective icons
+
 const socialIcons: Record<
   string,
   React.ComponentType<{ className?: string }>
@@ -57,6 +64,7 @@ type PortfolioData = {
   summary?: string;
   skillset?: SkillItem[];
   links?: LinkItem[];
+  events?: Event[];
 };
 
 type HeroProps = {
@@ -69,7 +77,7 @@ type HeroProps = {
   portfolioData?: PortfolioData;
 };
 
-// Default avatar as a data URL
+
 const defaultAvatar = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='200' height='200'%3E%3Crect width='100%25' height='100%25' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='40' text-anchor='middle' dy='.3em' fill='%239ca3af'%3EU%3C/text%3E%3C/svg%3E`;
 
 export default function Hero({
@@ -96,14 +104,60 @@ export default function Hero({
     <div className="py-8">
       {/* Avatar */}
       <div className="mb-6">
-        <div className="h-24 w-24 overflow-hidden rounded-full">
-          <img
-            src={avatarUrl || defaultAvatar}
-            alt={name || "Profile"}
-            width={96}
-            height={96}
-            className="size-full object-cover"
-          />
+        <div className="relative h-24 w-24">
+          <div className="h-24 w-24 overflow-hidden rounded-full">
+            <img
+              src={avatarUrl || defaultAvatar}
+              alt={name || "Profile"}
+              width={96}
+              height={96}
+              className="size-full object-cover"
+            />
+          </div>
+
+          {/* Event Badges */}
+          {portfolioData?.events && portfolioData.events.length > 0 && (
+            <TooltipProvider>
+              {portfolioData.events.slice(0, 3).map((event, index) => {
+                const radius = 56;
+                const startAngle = -50;
+                const angleStep = 32;
+                const angle = (startAngle + index * angleStep) * (Math.PI / 180);
+
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                return (
+                  <Tooltip key={event.id}>
+                    <TooltipTrigger asChild>
+                      <a
+                        href={event.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute block h-7 w-7 overflow-hidden rounded-full border-2 border-background bg-background shadow-md transition-all hover:scale-110 hover:z-10"
+                        style={{
+                          left: `calc(50% + ${x}px)`,
+                          top: `calc(50% + ${y}px)`,
+                          transform: "translate(-50%, -50%)",
+                        }}
+                      >
+                        <img
+                          src={event.badge}
+                          alt={event.name}
+                          width={36}
+                          height={36}
+                          className="h-full w-full object-cover"
+                        />
+                      </a>
+                    </TooltipTrigger>
+                    <TooltipContent side="right">
+                      <p>{event.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
+            </TooltipProvider>
+          )}
         </div>
       </div>
 

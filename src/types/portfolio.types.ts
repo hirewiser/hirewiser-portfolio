@@ -115,6 +115,14 @@ export type Project = {
   projectKPI: ProjectKPI[];
 };
 
+export type Event = {
+  id: string;
+  name: string;
+  link: string;
+  type: string;
+  badge: string;
+};
+
 export type Template = {
   name: string;
 };
@@ -141,6 +149,7 @@ export type UserPortfolio = {
   links: UserLink[];
   certificates: Certificate[];
   education: Education[];
+  events: Event[];
   integrationsEnabled: boolean;
 };
 
