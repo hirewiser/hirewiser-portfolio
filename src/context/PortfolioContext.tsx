@@ -22,6 +22,12 @@ type PortfolioContextType = {
     isLoading: boolean;
     error: Error | null;
   };
+  getAllEventsWithTemplate: () => {
+    data?: GetUserPortfolioV3Response["events"];
+    template?: GetUserPortfolioV3Response["template"];
+    isLoading: boolean;
+    error: Error | null;
+  };
   getProjectByIdWithTemplate: (id: string) => {
     data?: GetUserPortfolioV3Response["projects"][number];
     template?: GetUserPortfolioV3Response["template"];
@@ -72,6 +78,13 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     error: error as Error | null,
   });
 
+  const getAllEventsWithTemplate = () => ({
+    data: portfolioData?.events,
+    template: portfolioData?.template,
+    isLoading,
+    error: error as Error | null,
+  });
+
   const getProjectByIdWithTemplate = (id: string) => {
     const project = portfolioData?.projects?.find(
       (p: GetUserPortfolioV3Response["projects"][number]) => p.id === id
@@ -100,6 +113,7 @@ export function PortfolioProvider({ children }: { children: ReactNode }) {
     getAllDetailsWithTemplate,
     getAllProjectsWithTemplate,
     getAllExperienceWithTemplate,
+    getAllEventsWithTemplate,
     getProjectByIdWithTemplate,
     getExperienceByIdWithTemplate,
   };
