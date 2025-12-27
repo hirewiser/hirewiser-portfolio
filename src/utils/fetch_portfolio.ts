@@ -1,7 +1,9 @@
 export function getUsername() {
-  const host = window.location.host;
-  const parts = host.split(".");
-  return parts[0];
+  const host = window.location.hostname;
+  if (host.includes("hirewiser.in")) {
+    return host.split(".")[0];
+  }
+  return host;
 }
 
 export async function getPortfolioData() {

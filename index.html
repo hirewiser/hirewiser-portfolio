@@ -11,12 +11,13 @@
     <script>
     "use strict";
     const apiUrl = "%VITE_COFOUNDS_API_URL%";
-    const subdomain = window.location.host.split(".")[0];
+    const host = window.location.hostname;
+    const identifier = host.includes("hirewiser.in") ? host.split(".")[0] : host;
     const link = document.createElement("link");
     link.rel = "preload";
     link.as = "fetch";
     link.crossOrigin = "anonymous";
-    link.href = `${apiUrl}/${subdomain}`;
+    link.href = `${apiUrl}/${identifier}`;
     document.head.appendChild(link);
     </script>
     <link
