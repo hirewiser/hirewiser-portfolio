@@ -101,10 +101,10 @@ pnpm install
 
 ### 2. Add environment variables
 
-Create a `.env` file at the project root with the following variable:
+Create a `.env.local` file at the project root with the following variable:
 
 ```
-VITE_COFOUNDS_API_URL="https://www.buildarclabs.in/api/v3/portfolio"
+VITE_COFOUNDS_API_URL="https://cofounds-t3-ivory.vercel.app/api/v3/portfolio"
 ```
 
 ### 3. Remove PostHog (Dev Only)

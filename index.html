@@ -12,7 +12,7 @@
     "use strict";
     const apiUrl = "%VITE_COFOUNDS_API_URL%";
     const host = window.location.hostname;
-    const identifier = host.includes("hirewiser.in") ? host.split(".")[0] : host;
+    const identifier = host.split(".")[0];
     const link = document.createElement("link");
     link.rel = "preload";
     link.as = "fetch";
